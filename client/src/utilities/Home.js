@@ -27,7 +27,7 @@ const Home = ({ scrollToContact }) => {
   const [totalRatings, setTotalRatings] = useState(null);
   const [error, setError] = useState(null);
 
-  const placeId = "YOUR_PLACE_ID_HERE"; // Replace with actual Google Place ID
+  const placeId = "ChIJDZZ912KYFS4R55uSnCS2eLM"; // Replace with actual Google Place ID
 
   useEffect(() => {
     // Delay loading reviews
