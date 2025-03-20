@@ -24,7 +24,7 @@ class GoogleReviewsController < ApplicationController
       return
     end
 
-    # Construct URL with only the "reviews" field to avoid address issues
+    # Construct URL with only "reviews" to prevent Google Maps errors
     url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=reviews&key=#{api_key}")
 
     Rails.logger.info "🌍 Requesting Google API: #{url}"
@@ -43,10 +43,16 @@ class GoogleReviewsController < ApplicationController
       data = JSON.parse(response.body)
 
       if data['status'] == 'OK'
+        reviews = data.dig('result', 'reviews') || []
+
+        if reviews.empty?
+          Rails.logger.warn "⚠️ No reviews found for this place."
+        end
+
         Rails.logger.info "✅ Google API Request Successful"
 
         render json: {
-          reviews: data.dig('result', 'reviews') || []
+          reviews: reviews.any? ? reviews : nil # Return null instead of empty array
         }
       else
         Rails.logger.error "❌ Google API Request Failed: #{data['status']} - #{data['error_message']}"

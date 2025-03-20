@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const GoogleReviews = ({ placeId }) => {
-  const [reviews, setReviews] = useState(null); // Default to null to prevent flicker
+  const [reviews, setReviews] = useState(null); // Start as null
   const [rating, setRating] = useState(null);
   const [totalRatings, setTotalRatings] = useState(null);
   const [error, setError] = useState(null);
@@ -21,6 +21,12 @@ const GoogleReviews = ({ placeId }) => {
         const response = await axios.get(`/google_reviews?place_id=${placeId}`);
         console.log("Google Reviews API Response:", response.data);
 
+        if (response.data.error) {
+          console.error("Google Reviews API Error:", response.data.error);
+          setError(response.data.error);
+          return;
+        }
+
         const fetchedReviews = response.data.reviews || [];
         setReviews(fetchedReviews);
         setRating(response.data.rating);
@@ -38,8 +44,11 @@ const GoogleReviews = ({ placeId }) => {
     fetchReviews();
   }, [placeId]);
 
-  // ✅ If there are no reviews or an error, do not render anything.
-  if (error || (reviews && reviews.length === 0)) return null;
+  // ✅ If error exists OR reviews are empty, return null (do not render anything)
+  if (error || (reviews && reviews.length === 0)) {
+    console.warn("GoogleReviews Component Hidden: No reviews or API Error.");
+    return null;
+  }
 
   return (
     <div>
