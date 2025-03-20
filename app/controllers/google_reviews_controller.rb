@@ -4,8 +4,8 @@ require 'openssl'
 
 class GoogleReviewsController < ApplicationController
   def fetch_reviews
-    place_id = params[:place_id]&.strip # Ensure place_id is passed correctly
-    api_key = ENV['GOOGLE_API_KEY'] # Ensure API key is present
+    place_id = params[:place_id]&.strip
+    api_key = ENV['GOOGLE_API_KEY']
 
     # Debugging logs
     Rails.logger.info "🔍 Fetching Google Reviews..."
@@ -24,8 +24,8 @@ class GoogleReviewsController < ApplicationController
       return
     end
 
-    # Construct API request URL
-    url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=reviews,rating,user_ratings_total&key=#{api_key}")
+    # Construct URL with only the "reviews" field to avoid address issues
+    url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=reviews&key=#{api_key}")
 
     Rails.logger.info "🌍 Requesting Google API: #{url}"
 
@@ -37,20 +37,16 @@ class GoogleReviewsController < ApplicationController
       request = Net::HTTP::Get.new(url)
       response = http.request(request)
 
-      # Log the HTTP response
       Rails.logger.info "🔄 HTTP Response Code: #{response.code}"
       Rails.logger.info "📄 Response Body: #{response.body}"
 
-      # Parse JSON response
       data = JSON.parse(response.body)
 
       if data['status'] == 'OK'
         Rails.logger.info "✅ Google API Request Successful"
 
         render json: {
-          reviews: data.dig('result', 'reviews') || [],
-          rating: data.dig('result', 'rating'),
-          total_ratings: data.dig('result', 'user_ratings_total')
+          reviews: data.dig('result', 'reviews') || []
         }
       else
         Rails.logger.error "❌ Google API Request Failed: #{data['status']} - #{data['error_message']}"
