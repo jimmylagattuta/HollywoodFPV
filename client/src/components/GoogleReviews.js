@@ -8,44 +8,53 @@ const GoogleReviews = ({ placeId }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!placeId) {
+      setError("Error: Missing placeId.");
+      console.error("GoogleReviews Error: Missing placeId.");
+      return;
+    }
+
+    console.log(`Fetching reviews for placeId: ${placeId}`);
+
     const fetchReviews = async () => {
       try {
         const response = await axios.get(`/google_reviews?place_id=${placeId}`);
-        // Assuming the API returns an object with keys: rating, total_ratings, reviews
+        console.log("Google Reviews API Response:", response.data);
+
         setReviews(response.data.reviews || []);
         setRating(response.data.rating);
         setTotalRatings(response.data.total_ratings);
       } catch (err) {
         setError("Failed to load Google reviews.");
-        console.error("Error fetching Google Reviews:", err);
+        console.error("Error fetching Google Reviews:", err.response?.data || err.message);
       }
     };
 
     fetchReviews();
   }, [placeId]);
 
-  // Hide the component if there's an error or if there are no reviews and no rating
-  if (error || (reviews.length === 0 && !rating)) {
-    return null;
-  }
-
   return (
     <div>
       <h2>Google Reviews</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       {rating && (
         <p>
           <strong>Average Rating:</strong> {rating} ⭐ ({totalRatings} reviews)
         </p>
       )}
       <ul>
-        {reviews.map((review, index) => (
-          <li key={index} style={{ marginBottom: "15px", listStyle: "none" }}>
-            <p>
-              <strong>{review.author_name}</strong> ({review.rating} ★)
-            </p>
-            <p>{review.text}</p>
-          </li>
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map((review, index) => (
+            <li key={index} style={{ marginBottom: "15px", listStyle: "none", padding: "10px", borderBottom: "1px solid #ddd" }}>
+              <p>
+                <strong>{review.author_name}</strong> ({review.rating} ★)
+              </p>
+              <p>{review.text}</p>
+            </li>
+          ))
+        ) : (
+          <p>No reviews available.</p>
+        )}
       </ul>
     </div>
   );
