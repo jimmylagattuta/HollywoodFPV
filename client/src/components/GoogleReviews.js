@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const GoogleReviews = ({ placeId }) => {
-  const [reviews, setReviews] = useState(null); // Start as null
+  const [reviews, setReviews] = useState(null);
   const [rating, setRating] = useState(null);
   const [totalRatings, setTotalRatings] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true); // Track loading state
 
   useEffect(() => {
     if (!placeId) {
       console.error("GoogleReviews Error: Missing placeId.");
       setError("Error: Missing placeId.");
+      setLoading(false);
       return;
     }
 
@@ -18,12 +20,13 @@ const GoogleReviews = ({ placeId }) => {
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`/google_reviews?place_id=${placeId}`);
+        const response = await axios.get(`https://www.lightningseo.dev/google_reviews?place_id=${placeId}`);
         console.log("Google Reviews API Response:", response.data);
 
         if (response.data.error) {
           console.error("Google Reviews API Error:", response.data.error);
           setError(response.data.error);
+          setLoading(false);
           return;
         }
 
@@ -31,6 +34,7 @@ const GoogleReviews = ({ placeId }) => {
         setReviews(fetchedReviews);
         setRating(response.data.rating);
         setTotalRatings(response.data.total_ratings);
+        setLoading(false);
 
         if (fetchedReviews.length === 0) {
           console.warn("GoogleReviews: No reviews available.");
@@ -38,14 +42,15 @@ const GoogleReviews = ({ placeId }) => {
       } catch (err) {
         console.error("Error fetching Google Reviews:", err.response?.data || err.message);
         setError("Failed to load Google reviews.");
+        setLoading(false);
       }
     };
 
     fetchReviews();
   }, [placeId]);
 
-  // ✅ If error exists OR reviews are empty, return null (do not render anything)
-  if (error || (reviews && reviews.length === 0)) {
+  // ✅ Hide the component if API fails, has errors, or no reviews exist
+  if (loading || error || (reviews && reviews.length === 0)) {
     console.warn("GoogleReviews Component Hidden: No reviews or API Error.");
     return null;
   }
