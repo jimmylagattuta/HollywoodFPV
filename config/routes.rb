@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'google_reviews/fetch_reviews'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -11,7 +12,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "api/sessions#destroy"  
   delete "/logout", to: "api/sessions#destroy"
   post '/contact', to: 'api/contacts#create'
-  get "/pull_yelp_cache", to: "api/jobs#pull_yelp_cache"
+  get "/pull_google_reviews", to: "api/jobs#pull_google_reviews"
+  get '/google_reviews', to: 'google_reviews#fetch_reviews'
 
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

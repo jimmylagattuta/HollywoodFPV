@@ -1,102 +1,89 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import axios from "axios";
 import HeroSection from "../sections/HeroSection";
 
-// Lazy-load everything else:
-const FooterComponent = lazy(() => import('../sections/FooterComponent'));
-const AboutUsComponent = lazy(() => import('../sections/AboutUsComponent'));
-const Contact = lazy(() => import('../pages/main/Contact'));
+// Lazy-load Google Reviews
+const GoogleReviews = lazy(() => import("../components/GoogleReviews"));
+
+// Lazy-load everything else
+const FooterComponent = lazy(() => import("../sections/FooterComponent"));
+const AboutUsComponent = lazy(() => import("../sections/AboutUsComponent"));
+const Contact = lazy(() => import("../pages/main/Contact"));
 const PlaquesComponent = lazy(() => import("../sections/PlaquesComponent"));
 const OurServicesComponent = lazy(() => import("../sections/OurServicesComponent"));
 const HowItWorksComponent = lazy(() => import("../sections/HowItWorksComponent"));
 const ProjectsSection = lazy(() => import("../sections/ProjectsSection"));
 const LocationsSection = lazy(() => import("../sections/LocationsSection"));
 
-const Home = ({ scrollToContact, reviews }) => {
+const Home = ({ scrollToContact }) => {
   // State to trigger loading of lazy sections
   const [loadRest, setLoadRest] = useState(false);
+  const [loadReviews, setLoadReviews] = useState(false);
+  
+  // Google Reviews States
+  const [reviews, setReviews] = useState([]);
+  const [rating, setRating] = useState(null);
+  const [totalRatings, setTotalRatings] = useState(null);
+  const [error, setError] = useState(null);
+
+  const placeId = "YOUR_PLACE_ID_HERE"; // Replace with actual Google Place ID
 
   useEffect(() => {
-    // Load lazy sections immediately after Home mounts (adjust delay if needed)
+    // Delay loading reviews
     const timer = setTimeout(() => {
       setLoadRest(true);
-    }, 0);
+      setLoadReviews(true);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Rich snippet updated for LightningSEO.dev digital services
-  const richSnippet = {
+  // Fetch Google Reviews and prepare structured data
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(`/google_reviews?place_id=${placeId}`);
+        setReviews(response.data.reviews || []);
+        setRating(response.data.rating);
+        setTotalRatings(response.data.total_ratings);
+      } catch (err) {
+        setError("Failed to load Google reviews.");
+        console.error("Error fetching Google Reviews:", err);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
+  // Generate JSON-LD for Google Reviews
+  const reviewSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "LightningSEO.dev",
     "url": "https://lightningseo.dev",
-    "logo": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp",
-    "description": "LightningSEO.dev offers affordable, high-performance digital marketing solutions including expert SEO, website development, mobile app development, and Apple Watch app development to boost your online presence.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-000-000-0000",
-      "contactType": "Customer Service",
-      "availableLanguage": ["English"],
-      "email": "jimmy.lagattuta@gmail.com"
+    "image": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": rating || "5.0",  // Default to 5.0 if no data yet
+      "reviewCount": totalRatings || "10" // Default to 10 if no data yet
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Digital Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "On-Page SEO Optimization",
-            "description": "Optimize your website’s content, meta tags, and structure for higher search rankings.",
-            "url": "https://lightningseo.dev/services/on-page-seo"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Technical SEO & Website Performance",
-            "description": "Improve your website’s technical health and speed for better user experience.",
-            "url": "https://lightningseo.dev/services/technical-seo"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Website Development & Design",
-            "description": "Create responsive, SEO-friendly websites that represent your brand.",
-            "url": "https://lightningseo.dev/services/web-development"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mobile Application Development",
-            "description": "Design and develop mobile apps for iOS and Android platforms.",
-            "url": "https://lightningseo.dev/services/mobile-app"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Apple Watch App Development",
-            "description": "Build companion apps for Apple Watch to extend your digital ecosystem.",
-            "url": "https://lightningseo.dev/services/watch-app"
-          }
-        }
-      ]
-    }
+    "review": reviews.slice(0, 3).map((review) => ({
+      "@type": "Review",
+      "author": review.author_name,
+      "datePublished": new Date().toISOString(),
+      "reviewBody": review.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating
+      }
+    }))
   };
 
   return (
     <div>
       <Helmet>
         <script type="application/ld+json">
-          {JSON.stringify(richSnippet)}
+          {JSON.stringify(reviewSchema)}
         </script>
         <title>LightningSEO.dev | Affordable Digital Marketing & Web Solutions</title>
         <meta
@@ -104,8 +91,15 @@ const Home = ({ scrollToContact, reviews }) => {
           content="LightningSEO.dev offers affordable, high-performance digital marketing solutions including expert SEO, website development, mobile app development, and Apple Watch app development to boost your online presence."
         />
       </Helmet>
-      
+
       <HeroSection />
+
+      {/* Lazy-loaded Google Reviews */}
+      {loadReviews && (
+        <Suspense fallback={<div>Loading Reviews...</div>}>
+          <GoogleReviews placeId={placeId} />
+        </Suspense>
+      )}
 
       {loadRest && (
         <Suspense fallback={<div>Loading...</div>}>
