@@ -49,7 +49,7 @@ const Home = ({ scrollToContact }) => {
     "@type": "LocalBusiness",
     "name": "LightningSEO.dev",
     "url": "https://lightningseo.dev",
-    "image": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp",
+    "image": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": staticRating,

@@ -46,7 +46,7 @@ const Services = () => {
       "@type": "Organization",
       "name": "LightningSEO.dev",
       "url": "https://lightningseo.dev",
-      "logo": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp"
+      "logo": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

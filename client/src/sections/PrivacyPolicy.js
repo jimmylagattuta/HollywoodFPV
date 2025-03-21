@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
       "name": "LightningSEO.dev",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp"
+        "url": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
       },
       "email": "jimmy.lagattuta@gmail.com",
       "address": {

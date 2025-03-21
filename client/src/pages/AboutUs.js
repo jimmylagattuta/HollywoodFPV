@@ -18,7 +18,7 @@ const AboutUs = () => {
     "@type": "Organization",
     "name": "LightningSEO.dev",
     "url": "https://lightningseo.dev/about-us",
-    "logo": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp",
+    "logo": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp",
     "description":
       "LightningSEO.dev is a full-service digital marketing agency specializing in affordable, high-performance SEO solutions, custom website development, mobile app development, and Apple Watch app development. We deliver measurable growth and a robust online presence for businesses of all sizes.",
     "contactPoint": {

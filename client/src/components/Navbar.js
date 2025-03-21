@@ -103,7 +103,7 @@ function Navbar() {
         <div className="navbar-brand">
           <div className="navbar-logo" onClick={() => handleNavItemClick('/')}>
             <img
-              src="https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp"
+              src="https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
               alt="LightningSEO.dev Logo"
               loading="eager"
               height="65"
