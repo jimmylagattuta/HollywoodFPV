@@ -57,10 +57,7 @@ const Home = ({ scrollToContact }) => {
     },
     "review": staticReviews.map((review) => ({
       "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.author_name
-      },
+      "author": review.author_name,  // ✅ Change from object to string
       "datePublished": review.datePublished,
       "reviewBody": review.text,
       "reviewRating": {
@@ -76,6 +73,7 @@ const Home = ({ scrollToContact }) => {
     },
     "priceRange": "$$"
   };
+  
 
   return (
     <div>
