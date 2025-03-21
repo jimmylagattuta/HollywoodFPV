@@ -1,49 +1,71 @@
-/* ✅ Mobile-first styles */
+/* Container styles with a fade-in animation */
 .google-reviews {
     width: 90%;
     max-width: 600px;
-    margin: 20px auto;
-    padding: 15px;
+    margin: 40px auto;
+    padding: 20px;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: "Roboto", sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
   }
   
+  /* Fade-in keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Gradient title styling for impact */
   .reviews-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
+  /* Rating text styling */
   .reviews-rating {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #444;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
   
+  /* Grid list for reviews with spacing */
   .reviews-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-gap: 20px;
   }
   
+  /* Review card styles */
   .review-card {
     background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: transform 0.2s ease-in-out;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
   
   .review-card:hover {
     transform: scale(1.02);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   }
   
+  /* Header layout inside each card */
   .review-header {
     display: flex;
     justify-content: space-between;
@@ -51,8 +73,10 @@
     font-size: 1rem;
     font-weight: bold;
     color: #222;
+    margin-bottom: 10px;
   }
   
+  /* Rating badge within the header */
   .review-rating {
     background: #ffcc00;
     color: #222;
@@ -61,43 +85,42 @@
     border-radius: 5px;
   }
   
+  /* Review text styling for readability */
   .review-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555;
     text-align: left;
-    margin-top: 8px;
     line-height: 1.5;
   }
   
-  /* ✅ Tablet & Desktop Styles */
+  /* Tablet & Desktop Styles */
   @media (min-width: 768px) {
     .google-reviews {
-      width: 80%;
       max-width: 700px;
+      padding: 30px;
     }
-  
+    
     .reviews-title {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
     }
-  
+    
     .review-card {
-      padding: 20px;
+      padding: 25px;
     }
-  
+    
     .review-text {
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
   }
   
-  /* ✅ Large Screens */
+  /* Large Screens: Two-column grid for reviews */
   @media (min-width: 1024px) {
     .google-reviews {
       max-width: 800px;
     }
-  
+    
     .reviews-list {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
     }
-  }  
+  }
+  
