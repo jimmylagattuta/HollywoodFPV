@@ -57,12 +57,16 @@ const Home = ({ scrollToContact }) => {
     },
     "review": staticReviews.map((review) => ({
       "@type": "Review",
-      "author": review.author_name,  // ✅ Change from object to string
+      "author": {
+        "@type": "Person",
+        "name": review.author_name  // ✅ Now correctly formatted as a Person object
+      },
       "datePublished": review.datePublished,
       "reviewBody": review.text,
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": review.rating
+        "ratingValue": review.rating,
+        "name": "Customer review"  // ✅ Helps Google understand the rating purpose
       }
     })),
     "address": {
