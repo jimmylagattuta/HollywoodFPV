@@ -1,0 +1,103 @@
+/* ✅ Mobile-first styles */
+.google-reviews {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .reviews-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .reviews-rating {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .reviews-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .review-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .review-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .review-rating {
+    background: #ffcc00;
+    color: #222;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .review-text {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: left;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  
+  /* ✅ Tablet & Desktop Styles */
+  @media (min-width: 768px) {
+    .google-reviews {
+      width: 80%;
+      max-width: 700px;
+    }
+  
+    .reviews-title {
+      font-size: 1.8rem;
+    }
+  
+    .review-card {
+      padding: 20px;
+    }
+  
+    .review-text {
+      font-size: 1rem;
+    }
+  }
+  
+  /* ✅ Large Screens */
+  @media (min-width: 1024px) {
+    .google-reviews {
+      max-width: 800px;
+    }
+  
+    .reviews-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }  

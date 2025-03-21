@@ -30,12 +30,16 @@ function ProjectsSection({ showButton = true }) {
       <div className="projects-grid">
         {projectsToShow.map((project) => (
           <Link key={project.id} to={`/projects/${project.id}`} className="project-card">
-            <div
-              className="project-image"
-              style={{
-                backgroundImage: `url(${isDesktop ? project.desktopImage : project.heroImage})`,
-              }}
-            ></div>
+            <div className="project-image-container">
+              <img
+                src={isDesktop ? project.desktopImage : project.heroImage}
+                alt={project.name}
+                className="project-image"
+                loading="lazy" // ✅ Defers loading for offscreen images
+                width="400" // ✅ Set explicit width
+                height="250" // ✅ Set explicit height
+              />
+            </div>
             <div className="project-info">
               <h2 className="project-title">{project.name}</h2>
               <p className="project-description">{project.description}</p>
