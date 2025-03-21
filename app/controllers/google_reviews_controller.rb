@@ -7,7 +7,6 @@ class GoogleReviewsController < ApplicationController
     place_id = params[:place_id]&.strip
     api_key = ENV['GOOGLE_API_KEY']
 
-    # Debugging logs
     Rails.logger.info "🔍 Fetching Google Reviews..."
     Rails.logger.info "📍 PLACE ID: #{place_id}"
     Rails.logger.info "🔑 GOOGLE API KEY: #{api_key ? 'Key is present' : 'Key is MISSING!'}"
@@ -24,8 +23,8 @@ class GoogleReviewsController < ApplicationController
       return
     end
 
-    # Construct URL with only "reviews" to prevent Google Maps errors
-    url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=reviews&key=#{api_key}")
+    # ✅ Include additional fields: `geometry` and `formatted_address`
+    url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=reviews,geometry,formatted_address&key=#{api_key}")
 
     Rails.logger.info "🌍 Requesting Google API: #{url}"
 
@@ -44,6 +43,7 @@ class GoogleReviewsController < ApplicationController
 
       if data['status'] == 'OK'
         reviews = data.dig('result', 'reviews') || []
+        formatted_address = data.dig('result', 'formatted_address') || "Address unavailable"
 
         if reviews.empty?
           Rails.logger.warn "⚠️ No reviews found for this place."
@@ -52,7 +52,8 @@ class GoogleReviewsController < ApplicationController
         Rails.logger.info "✅ Google API Request Successful"
 
         render json: {
-          reviews: reviews.any? ? reviews : nil # Return null instead of empty array
+          reviews: reviews.any? ? reviews : nil,
+          address: formatted_address
         }
       else
         Rails.logger.error "❌ Google API Request Failed: #{data['status']} - #{data['error_message']}"

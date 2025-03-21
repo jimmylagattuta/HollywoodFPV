@@ -1,10 +1,6 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import axios from "axios";
 import HeroSection from "../sections/HeroSection";
-
-// Lazy-load Google Reviews
-const GoogleReviews = lazy(() => import("../components/GoogleReviews"));
 
 // Lazy-load everything else
 const FooterComponent = lazy(() => import("../sections/FooterComponent"));
@@ -19,43 +15,35 @@ const LocationsSection = lazy(() => import("../sections/LocationsSection"));
 const Home = ({ scrollToContact }) => {
   // State to trigger loading of lazy sections
   const [loadRest, setLoadRest] = useState(false);
-  const [loadReviews, setLoadReviews] = useState(false);
-  
-  // Google Reviews States
-  const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState(null);
-  const [totalRatings, setTotalRatings] = useState(null);
-  const [error, setError] = useState(null);
-
-  const placeId = "ChIJDZZ912KYFS4R55uSnCS2eLM"; // Replace with actual Google Place ID
 
   useEffect(() => {
-    // Delay loading reviews
+    // Delay loading sections
     const timer = setTimeout(() => {
       setLoadRest(true);
-      setLoadReviews(true);
     }, 500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Fetch Google Reviews and prepare structured data
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await axios.get(`/google_reviews?place_id=${placeId}`);
-        setReviews(response.data.reviews || []);
-        setRating(response.data.rating);
-        setTotalRatings(response.data.total_ratings);
-      } catch (err) {
-        setError("Failed to load Google reviews.");
-        console.error("Error fetching Google Reviews:", err);
-      }
-    };
+  // ✅ Hardcoded Google Reviews (Temporary)
+  const staticReviews = [
+    {
+      author_name: "Nestor Perez",
+      rating: 5,
+      text: "James Lagattuta did an outstanding job improving our company websites. His expertise in web development, SEO, and site optimization greatly enhanced our online presence. He’s professional, responsive, and delivers high-quality work. Highly recommend!",
+      datePublished: "2024-03-20T04:00:00Z",
+    },
+    {
+      author_name: "Bcb Cartz",
+      rating: 5,
+      text: "James helped us increase our website traffic by quadruple and more! He has wonderful problem-solving skills with a great positive attitude and always respectful. Highly recommended!",
+      datePublished: "2024-03-19T12:00:00Z",
+    }
+  ];
 
-    fetchReviews();
-  }, []);
+  const staticRating = 5.0;
+  const staticTotalRatings = 2;
 
-  // Generate JSON-LD for Google Reviews
+  // ✅ JSON-LD Schema for Google Rich Snippet
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -64,13 +52,13 @@ const Home = ({ scrollToContact }) => {
     "image": "https://i.postimg.cc/QtwR2GW9/i-Stock-1502494966-1.webp",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": rating || "5.0",  // Default to 5.0 if no data yet
-      "reviewCount": totalRatings || "10" // Default to 10 if no data yet
+      "ratingValue": staticRating,
+      "reviewCount": staticTotalRatings
     },
-    "review": reviews.slice(0, 3).map((review) => ({
+    "review": staticReviews.map((review) => ({
       "@type": "Review",
       "author": review.author_name,
-      "datePublished": new Date().toISOString(),
+      "datePublished": review.datePublished,
       "reviewBody": review.text,
       "reviewRating": {
         "@type": "Rating",
@@ -94,12 +82,19 @@ const Home = ({ scrollToContact }) => {
 
       <HeroSection />
 
-      {/* Lazy-loaded Google Reviews */}
-      {loadReviews && (
-        <Suspense fallback={<div>Loading Reviews...</div>}>
-          <GoogleReviews placeId={placeId} />
-        </Suspense>
-      )}
+      {/* ✅ Static Google Reviews Section */}
+      <div>
+        <h2>Google Reviews</h2>
+        <p><strong>Average Rating:</strong> {staticRating} ⭐ ({staticTotalRatings} reviews)</p>
+        <ul>
+          {staticReviews.map((review, index) => (
+            <li key={index} style={{ marginBottom: "15px", listStyle: "none", padding: "10px", borderBottom: "1px solid #ddd" }}>
+              <p><strong>{review.author_name}</strong> ({review.rating} ★)</p>
+              <p>{review.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {loadRest && (
         <Suspense fallback={<div>Loading...</div>}>
