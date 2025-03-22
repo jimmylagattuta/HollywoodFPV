@@ -86,7 +86,7 @@ const Home = ({ scrollToContact }) => {
         <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
 
         {/* ✅ High-Converting Title for Google Search */}
-        <title>LightningSEO.dev | Get an SEO-Powered Website in a Week – 5★ Reviews</title>
+        <title>LightningSEO.dev | Affordable Websites That Rank Faster – Built in Under a Week</title>
 
         {/* ✅ Enhanced Meta Description for Google Impressions */}
         <meta
