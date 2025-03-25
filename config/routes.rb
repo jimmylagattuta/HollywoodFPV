@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post '/contact', to: 'api/contacts#create'
   get "/pull_google_reviews", to: "api/jobs#pull_google_reviews"
   get '/google_reviews', to: 'google_reviews#fetch_reviews'
-  post '/send_visit_notification', to: 'notifications#visit'
+  post '/send_visit_notification', to: 'api/notifications#visit'
 
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
