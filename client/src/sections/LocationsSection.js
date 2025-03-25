@@ -111,16 +111,20 @@ function LocationsSection({ showButton = true }) {
         ))}
       </div>
       {locations.length > 10 && (
-        <div
-          className="button-container"
-          style={{ textAlign: "center", marginTop: "20px" }}
-        >
+        <div className="button-container" style={{ textAlign: "center", marginTop: "20px" }}>
           <button
             className="location-section-button"
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? "Show Less" : "Show All Locations"}
           </button>
+        </div>
+      )}
+      {showButton && (
+        <div className="cta-container" style={{ textAlign: "center", marginTop: "20px" }}>
+          <Link to="/contact" className="cta-button">
+            Get a Free SEO Audit
+          </Link>
         </div>
       )}
     </section>

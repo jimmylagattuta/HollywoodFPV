@@ -347,8 +347,8 @@ export const serviceOfferedData = {
   },
   "newport-beach": {
     name: "Newport Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874436/iStock-950875630_ofpuc1.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874436/iStock-950875630_ofpuc1.webp",
     description:
       "Offering strategic SEO services in Newport Beach, CA to help businesses rank higher and attract quality traffic. We make websites for businesses in Newport Beach too!",
     phone: "8059980074",
@@ -393,8 +393,8 @@ export const serviceOfferedData = {
   // -- New Los Angeles-Area Locations (with images assigned based on proximity) --
   "los-angeles": {
     name: "Los Angeles",
-    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
-    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874806/iStock-2150043738_hl5rfm.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874806/iStock-2150043738_hl5rfm.webp",
     description:
       "Offering premier SEO services across Los Angeles, CA to help businesses rank higher in search results and capture more leads. We make websites for businesses in Los Angeles too!",
     phone: "8059980074",
@@ -404,8 +404,8 @@ export const serviceOfferedData = {
   },
   "hollywood": {
     name: "Hollywood",
-    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
-    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875216/iStock-901224272_kk340i.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875216/iStock-901224272_kk340i.webp",
     description:
       "Boost your online presence with tailored SEO solutions for entertainment, hospitality, and other Hollywood-based industries. We make websites for businesses in Hollywood too!",
     phone: "8059980074",
@@ -415,8 +415,8 @@ export const serviceOfferedData = {
   },
   "beverly-hills": {
     name: "Beverly Hills",
-    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
-    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875342/iStock-1824715763_ijv6jm.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875342/iStock-1824715763_ijv6jm.webp",
     description:
       "Delivering high-end SEO strategies in Beverly Hills, CA for luxury brands, boutiques, and professional services. We make websites for businesses in Beverly Hills too!",
     phone: "8059980074",
@@ -426,8 +426,8 @@ export const serviceOfferedData = {
   },
   "west-hollywood": {
     name: "West Hollywood",
-    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
-    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873885/iStock-1197001565_cdknqc.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873885/iStock-1197001565_cdknqc.webp",
     description:
       "Providing comprehensive SEO and digital marketing services in West Hollywood, CA to elevate brand visibility. We make websites for businesses in West Hollywood too!",
     phone: "8059980074",
@@ -437,8 +437,8 @@ export const serviceOfferedData = {
   },
   "santa-monica": {
     name: "Santa Monica",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874172/iStock-920371008_rvsmnk.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874172/iStock-920371008_rvsmnk.webp",
     description:
       "Helping businesses in Santa Monica, CA thrive online with SEO-driven content strategies and local optimization. We make websites for businesses in Santa Monica too!",
     phone: "8059980074",
@@ -448,8 +448,8 @@ export const serviceOfferedData = {
   },
   "pasadena": {
     name: "Pasadena",
-    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875445/iStock-2176284032_lvoxct.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875445/iStock-2176284032_lvoxct.webp",
     description:
       "Enhancing online reach for Pasadena, CA businesses through result-oriented SEO techniques and targeted campaigns. We make websites for businesses in Pasadena too!",
     phone: "8059980074",
@@ -459,8 +459,8 @@ export const serviceOfferedData = {
   },
   "burbank": {
     name: "Burbank",
-    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875577/iStock-2198809041_t7vudh.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875577/iStock-2198809041_t7vudh.webp",
     description:
       "Specializing in SEO solutions for Burbank, CA’s media and entertainment businesses to stand out in a competitive market. We make websites for businesses in Burbank too!",
     phone: "8059980074",
@@ -470,8 +470,8 @@ export const serviceOfferedData = {
   },
   "glendale": {
     name: "Glendale",
-    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875663/iStock-1290550431_mjw6fp.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875663/iStock-1290550431_mjw6fp.webp",
     description:
       "Offering advanced SEO and digital marketing in Glendale, CA, helping businesses connect with more local customers. We make websites for businesses in Glendale too!",
     phone: "8059980074",
@@ -481,8 +481,8 @@ export const serviceOfferedData = {
   },
   "culver-city": {
     name: "Culver City",
-    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
-    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875807/iStock-1437611101_lcoh2s.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875807/iStock-1437611101_lcoh2s.webp",
     description:
       "Delivering SEO and web optimization services in Culver City, CA, with a focus on tech startups and creative studios. We make websites for businesses in Culver City too!",
     phone: "8059980074",
@@ -492,8 +492,8 @@ export const serviceOfferedData = {
   },
   "manhattan-beach": {
     name: "Manhattan Beach",
-    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
-    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874663/iStock-1727998258_eztxwx.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874663/iStock-1727998258_eztxwx.webp",
     description:
       "Driving growth for Manhattan Beach, CA businesses with local SEO strategies and mobile-optimized solutions. We make websites for businesses in Manhattan Beach too!",
     phone: "8059980074",
@@ -503,8 +503,8 @@ export const serviceOfferedData = {
   },
   "redondo-beach": {
     name: "Redondo Beach",
-    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
-    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874317/iStock-2171431581_vj5zxp.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874317/iStock-2171431581_vj5zxp.webp",
     description:
       "Providing specialized SEO services in Redondo Beach, CA to boost visibility, site performance, and conversions. We make websites for businesses in Redondo Beach too!",
     phone: "8059980074",
@@ -514,8 +514,8 @@ export const serviceOfferedData = {
   },
   "hermosa-beach": {
     name: "Hermosa Beach",
-    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
-    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874552/iStock-638164694_xkx7ay.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874552/iStock-638164694_xkx7ay.webp",
     description:
       "Empowering Hermosa Beach, CA companies with strategic SEO campaigns that drive sustainable organic traffic. We make websites for businesses in Hermosa Beach too!",
     phone: "8059980074",
@@ -525,8 +525,8 @@ export const serviceOfferedData = {
   },
   "marina-del-rey": {
     name: "Marina del Rey",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874726/iStock-1297508424_n36pdf.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874726/iStock-1297508424_n36pdf.webp",
     description:
       "Optimizing online visibility for Marina del Rey, CA businesses through advanced SEO strategies and local listings. We make websites for businesses in Marina del Rey too!",
     phone: "8059980074",
@@ -536,8 +536,8 @@ export const serviceOfferedData = {
   },
   "venice": {
     name: "Venice",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874002/iStock-1552739687_t4gc75.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874002/iStock-1552739687_t4gc75.webp",
     description:
       "Helping Venice, CA entrepreneurs and creative brands gain traction in search results with tailored SEO solutions. We make websites for businesses in Venice too!",
     phone: "8059980074",
@@ -547,8 +547,8 @@ export const serviceOfferedData = {
   },
   "malibu": {
     name: "Malibu",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873644/iStock-506010292_szrrji.webp",
+    desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873644/iStock-506010292_szrrji.webp",
     description:
       "Offering bespoke SEO services in Malibu, CA for luxury real estate, hospitality, and lifestyle-focused businesses. We make websites for businesses in Malibu too!",
     phone: "8059980074",
