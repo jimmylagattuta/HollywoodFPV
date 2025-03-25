@@ -14,6 +14,7 @@ const AboutUs = lazy(() => import("./pages/AboutUs"));
 const PrivacyPolicy = lazy(() => import("./sections/PrivacyPolicy"));
 const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 const LocationsPage = lazy(() => import("./pages/LocationsPage")); // <-- New route
+const VisitorTracker = lazy(() => import("./VisitorTracker")); // <-- Lazy load it
 
 function App() {
   console.log(process.env.REACT_APP_RECAPTCHA);
@@ -23,6 +24,7 @@ function App() {
       <Navbar />
       <main className="content">
         <Suspense fallback={<div>Loading...</div>}>
+          <VisitorTracker /> {/* Track visitors immediately */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services/:serviceId?" element={<Services />} />

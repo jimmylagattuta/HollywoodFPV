@@ -14,7 +14,7 @@ class ContactMailer < ApplicationMailer
   
       mail(
         to: 'jimmy.lagattuta@gmail.com', # Replace with your receiving email
-        subject: "LSD: New Submission for LightningSEO.dev Contact Us Form"
+        subject: "LightningSEO.dev: New Submission for LightningSEO.dev Contact Us Form"
       )
     end
   end
