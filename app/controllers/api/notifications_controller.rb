@@ -3,8 +3,7 @@ module Api
       skip_before_action :verify_authenticity_token
   
       def visit
-        # Use the permitted parameters, converted to a regular hash
-        VisitorMailer.with(visitor: visitor_params.to_h).send_visit_email.deliver_later
+        VisitorMailer.with(visitor: visitor_params.to_h).send_visit_email.deliver_now
         render json: { status: "Email sent" }, status: :ok
       rescue => e
         Rails.logger.error("Visitor email failed: #{e.message}")
@@ -14,7 +13,6 @@ module Api
       private
   
       def visitor_params
-        # Permit only the expected keys. Adjust as necessary.
         params.permit(:ip, :city, :region, :country, :referrer, :userAgent, :timestamp, 
                       notification: [:ip, :city, :region, :country, :referrer, :userAgent, :timestamp])
       end
