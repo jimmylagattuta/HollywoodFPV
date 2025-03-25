@@ -5,16 +5,13 @@ import { serviceOfferedData } from "../data";
 import "./LocationsSection.css";
 
 function LocationsSection({ showButton = true }) {
-  // Convert serviceOfferedData (an object) to an array of locations with keys.
   let locations = Object.entries(serviceOfferedData).map(([key, location]) => ({
     ...location,
     id: key,
   }));
 
-  // Alphabetize locations by name.
   locations.sort((a, b) => a.name.localeCompare(b.name));
 
-  // Determine if the screen width is 769 or greater.
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 769);
   useEffect(() => {
     const handleResize = () => {
@@ -24,13 +21,9 @@ function LocationsSection({ showButton = true }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Toggle expand/collapse state.
   const [expanded, setExpanded] = useState(false);
-
-  // Only show the first 10 locations by default.
   const displayedLocations = expanded ? locations : locations.slice(0, 10);
 
-  // Handler to open the address in Google Maps.
   const openMap = (address, e) => {
     e.stopPropagation();
     window.open(
@@ -39,13 +32,11 @@ function LocationsSection({ showButton = true }) {
     );
   };
 
-  // Handler for calling the phone number.
   const callPhone = (phone, e) => {
     e.stopPropagation();
     window.location.href = `tel:${phone.replace(/[^0-9]/g, "")}`;
   };
 
-  // Helper to determine the background image based on screen width and available data.
   const getBackgroundImage = (location) => {
     return isDesktop && location.desktopImage
       ? location.desktopImage
@@ -59,6 +50,7 @@ function LocationsSection({ showButton = true }) {
         <h1 className="company-name-locations">OUR LOCATIONS</h1>
         <div className="line-locations"></div>
       </div>
+
       <div className="locations-grid">
         {displayedLocations.map((location, index) => (
           <Link
@@ -105,21 +97,39 @@ function LocationsSection({ showButton = true }) {
                     </span>
                   </p>
                 )}
+
+                {location.email && (
+                  <p className="location-address">
+                    <a
+                      href={`mailto:${location.email}`}
+                      className="email-link"
+                      style={{ marginLeft: "5px", color: "#333", textDecoration: "underline" }}
+                    >
+                      Email Us
+                    </a>
+                  </p>
+                )}
+
               </div>
             </div>
           </Link>
         ))}
       </div>
-      {locations.length > 10 && (
-        <div className="button-container" style={{ textAlign: "center", marginTop: "20px" }}>
+
+      {locations.length > 8 && (
+        <div className="button-row-container">
           <button
             className="location-section-button"
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? "Show Less" : "Show All Locations"}
           </button>
+          <Link to="/locations" className="location-section-button">
+            Go to Full Locations Page
+          </Link>
         </div>
       )}
+
       {showButton && (
         <div className="cta-container" style={{ textAlign: "center", marginTop: "20px" }}>
           <Link to="/contact" className="cta-button">

@@ -217,29 +217,41 @@ const Services = () => {
         )}
 
         {/* LOCATIONS LOOP SECTION using serviceOfferedData */}
+
+        {/* LOCATIONS LOOP SECTION using serviceOfferedData */}
         <div className="locations-list-container">
           <h2 className="locations-list-title">Our Service Areas</h2>
           <p className="locations-list-subtitle">
             I serve all these locations – find a service area near you to experience our top-notch SEO services.
           </p>
           <div className="locations-grid">
-            {Object.entries(serviceOfferedData).map(([key, location]) => (
-              <Link key={key} to={`/locations/${key}`} className="location-card">
-                <div
-                  className="location-image"
-                  style={{ backgroundImage: `url(${location.heroImage})` }}
-                >
-                  <div className="location-overlay">
-                    <h3>{location.name}</h3>
+            {Object.entries(serviceOfferedData)
+              .sort(() => 0.5 - Math.random())
+              .slice(0, 8)
+              .map(([key, location]) => (
+                <Link key={key} to={`/locations/${key}`} className="location-card">
+                  <div
+                    className="location-image"
+                    style={{ backgroundImage: `url(${location.heroImage})` }}
+                  >
+                    <div className="location-overlay">
+                      <h3>{location.name}</h3>
+                    </div>
                   </div>
-                </div>
-                <div className="location-content">
-                  <p>{location.description}</p>
-                </div>
-              </Link>
-            ))}
+                  <div className="location-content">
+                    <p>{location.description}</p>
+                  </div>
+                </Link>
+              ))}
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <Link to="/locations" className="cta-button">
+              See All Locations
+            </Link>
           </div>
         </div>
+
       </div>
 
       {/* CONTACT FORM */}
