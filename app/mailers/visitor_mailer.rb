@@ -4,7 +4,7 @@ class VisitorMailer < ApplicationMailer
     def send_visit_email
       @visitor = params[:visitor]
       mail(
-        subject: "New Website Visit from #{@visitor['city']}, #{@visitor['country']}"
+        subject: "LightningSEO.dev: New Website Visit from #{@visitor['city']}, #{@visitor['country']}"
       )
     end
   end
