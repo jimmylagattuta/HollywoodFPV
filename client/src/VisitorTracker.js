@@ -17,7 +17,7 @@ const VisitorTracker = () => {
           timestamp: new Date().toISOString(),
         };
 
-        await fetch("http://lightningseo.dev/api/send_visit_notification", {
+        await fetch("https://www.lightningseo.dev/api/send_visit_notification", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
