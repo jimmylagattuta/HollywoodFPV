@@ -6,14 +6,16 @@ import "./LocationsSection.css";
 
 function LocationsSection({ showButton = true }) {
   // Convert serviceOfferedData (an object) to an array of locations with keys.
-  const locations = Object.entries(serviceOfferedData).map(([key, location]) => ({
+  let locations = Object.entries(serviceOfferedData).map(([key, location]) => ({
     ...location,
     id: key,
   }));
 
+  // Alphabetize locations by name.
+  locations.sort((a, b) => a.name.localeCompare(b.name));
+
   // Determine if the screen width is 769 or greater.
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 769);
-
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 769);
@@ -22,7 +24,13 @@ function LocationsSection({ showButton = true }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handler to open the address in Google Maps
+  // Toggle expand/collapse state.
+  const [expanded, setExpanded] = useState(false);
+
+  // Only show the first 10 locations by default.
+  const displayedLocations = expanded ? locations : locations.slice(0, 10);
+
+  // Handler to open the address in Google Maps.
   const openMap = (address, e) => {
     e.stopPropagation();
     window.open(
@@ -31,7 +39,7 @@ function LocationsSection({ showButton = true }) {
     );
   };
 
-  // Handler for calling the phone number
+  // Handler for calling the phone number.
   const callPhone = (phone, e) => {
     e.stopPropagation();
     window.location.href = `tel:${phone.replace(/[^0-9]/g, "")}`;
@@ -52,7 +60,7 @@ function LocationsSection({ showButton = true }) {
         <div className="line-locations"></div>
       </div>
       <div className="locations-grid">
-        {locations.map((location, index) => (
+        {displayedLocations.map((location, index) => (
           <Link
             key={location.id}
             to={`/locations/${location.id}`}
@@ -102,11 +110,17 @@ function LocationsSection({ showButton = true }) {
           </Link>
         ))}
       </div>
-      {showButton && (
-        <div className="button-container" style={{ textAlign: "center", marginTop: "20px" }}>
-          <Link to="/locations" className="location-section-button">
-            View All Locations
-          </Link>
+      {locations.length > 10 && (
+        <div
+          className="button-container"
+          style={{ textAlign: "center", marginTop: "20px" }}
+        >
+          <button
+            className="location-section-button"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? "Show Less" : "Show All Locations"}
+          </button>
         </div>
       )}
     </section>
