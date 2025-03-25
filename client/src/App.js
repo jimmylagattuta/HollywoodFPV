@@ -22,9 +22,11 @@ function App() {
   return (
     <div className="container">
       <Navbar />
+      <Suspense fallback={<div>Loading...</div>}>
+        <VisitorTracker />
+      </Suspense>
       <main className="content">
         <Suspense fallback={<div>Loading...</div>}>
-          <VisitorTracker /> {/* Track visitors immediately */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services/:serviceId?" element={<Services />} />

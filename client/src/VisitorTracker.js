@@ -1,30 +1,39 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 const VisitorTracker = () => {
   useEffect(() => {
-    fetch("https://ipapi.co/json/")
-      .then(res => res.json())
-      .then(data => {
-        const visitorInfo = {
-          ip: data.ip,
-          city: data.city,
-          region: data.region,
-          country: data.country_name,
-          referrer: document.referrer || "Direct",
+    const trackVisit = async () => {
+      try {
+        const geoRes = await fetch("https://ipapi.co/json");
+        const geoData = await geoRes.json();
+
+        const payload = {
+          ip: geoData.ip,
+          city: geoData.city,
+          region: geoData.region,
+          country: geoData.country_name,
+          referrer: document.referrer,
           userAgent: navigator.userAgent,
           timestamp: new Date().toISOString(),
         };
 
-        // Send to Rails Mailer endpoint
-        fetch("https://your-backend-domain.com/api/send_visit_notification", {
+        await fetch("http://lightningseo.dev/api/send_visit_notification", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(visitorInfo)
-        }).catch(err => console.error("Notification failed:", err));
-      });
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+      } catch (error) {
+        console.error("Visitor tracking failed:", error);
+      }
+    };
+
+    const delay = setTimeout(trackVisit, 1000); // 1-second delay
+    return () => clearTimeout(delay);
   }, []);
 
-  return null;
+  return null; // nothing is rendered
 };
 
 export default VisitorTracker;
