@@ -24,7 +24,28 @@ const SingleLocation = ({ office }) => {
   const locationImage =
     isDesktop && office.desktopImage ? office.desktopImage : office.heroImage;
 
-  // Build the office snippet (LocalBusiness)
+  // Hardcoded Google Reviews
+  // Updated to replace Nestor Perez with Alex Alvarado
+  const staticReviews = [
+    {
+      author_name: "Alex Alvarado",
+      rating: 5,
+      text: "Thanks for my web page. My impressions went from 4-30 in no time.. highly recommend!!!",
+      // Example date; adjust if needed
+      datePublished: "2025-03-20T04:00:00Z",
+    },
+    {
+      author_name: "Bcb Cartz",
+      rating: 5,
+      text: "James helped us increase our website traffic by quadruple and more! He has wonderful problem-solving skills with a great positive attitude and always respectful. Highly recommended!",
+      datePublished: "2025-03-15T12:00:00Z",
+    },
+  ];
+
+  const staticRating = 5.0;
+  const staticTotalRatings = 2;
+
+  // Build the office snippet (LocalBusiness) including reviews
   const officeSnippet = {
     "@type": "LocalBusiness",
     "name": office.name,
@@ -33,6 +54,24 @@ const SingleLocation = ({ office }) => {
     "url": window.location.href,
     "image": locationImage,
     "email": office.email,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": staticRating,
+      "reviewCount": staticTotalRatings
+    },
+    "review": staticReviews.map((review) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author_name
+      },
+      "datePublished": review.datePublished,
+      "reviewBody": review.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating
+      }
+    }))
   };
 
   // Build service snippets from servicesArray
