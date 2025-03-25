@@ -35,7 +35,25 @@ const Services = () => {
   const sectionImage = isDesktop ? service.images.desktopSection : service.images.section;
   const whyChooseBg = isDesktop && service.desktopWhyChooseBg ? service.desktopWhyChooseBg : service.whyChooseBg;
 
-  // Build the rich snippet for the service
+  // Hardcoded Google Reviews (Temporary)
+  const staticReviews = [
+    {
+      author_name: "Alex Alvarado",
+      rating: 5,
+      text: "Thanks for my web page. My impressions went from 4-30 in no time.. highly recommend!!!",
+      datePublished: "2025-03-20T04:00:00Z",
+    },
+    {
+      author_name: "Bcb Cartz",
+      rating: 5,
+      text: "James helped us increase our website traffic by quadruple and more! He has wonderful problem-solving skills with a great positive attitude and always respectful. Highly recommended!",
+      datePublished: "2025-03-15T12:00:00Z",
+    }
+  ];
+  const staticRating = 5.0;
+  const staticTotalRatings = staticReviews.length;
+
+  // Build the rich snippet for the service including reviews
   const serviceRichSnippet = {
     "@type": "Service",
     "name": service.title,
@@ -51,7 +69,25 @@ const Services = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://lightningseo.dev/services/${serviceId}`
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": staticRating,
+      "reviewCount": staticTotalRatings
+    },
+    "review": staticReviews.map((review) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author_name
+      },
+      "datePublished": review.datePublished,
+      "reviewBody": review.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating
+      }
+    }))
   };
 
   // Build location (LocalBusiness) snippets from serviceOfferedData

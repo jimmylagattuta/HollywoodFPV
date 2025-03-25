@@ -27,10 +27,11 @@ const Home = ({ scrollToContact }) => {
   // ✅ Hardcoded Google Reviews (Temporary)
   const staticReviews = [
     {
-      author_name: "Nestor Perez",
+      author_name: "Alex Alvarado",
       rating: 5,
-      text: "James Lagattuta did an outstanding job improving our company websites. His expertise in web development, SEO, and site optimization greatly enhanced our online presence. He’s professional, responsive, and delivers high-quality work. Highly recommend!",
-      datePublished: "2024-03-20T04:00:00Z",
+      text: "Thanks for my web page. My impressions went from 4-30 in no time.. highly recommend!!!",
+      // Example date; adjust if needed
+      datePublished: "2025-03-20T04:00:00Z",
     },
     {
       author_name: "Bcb Cartz",

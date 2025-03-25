@@ -5,7 +5,6 @@ import { servicesData } from "../data";
 import "./SingleLocation.css";
 
 const SingleLocation = ({ office }) => {
-  // Determine if the screen width is 769px or wider.
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 769);
 
   useEffect(() => {
@@ -14,24 +13,19 @@ const SingleLocation = ({ office }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Convert servicesData into an array for mapping.
   const servicesArray = Object.entries(servicesData).map(([key, service]) => ({
     ...service,
     id: key,
   }));
 
-  // Use desktop image if available and on desktop; else fallback to hero image.
   const locationImage =
     isDesktop && office.desktopImage ? office.desktopImage : office.heroImage;
 
-  // Hardcoded Google Reviews
-  // Updated to replace Nestor Perez with Alex Alvarado
   const staticReviews = [
     {
       author_name: "Alex Alvarado",
       rating: 5,
       text: "Thanks for my web page. My impressions went from 4-30 in no time.. highly recommend!!!",
-      // Example date; adjust if needed
       datePublished: "2025-03-20T04:00:00Z",
     },
     {
@@ -45,57 +39,54 @@ const SingleLocation = ({ office }) => {
   const staticRating = 5.0;
   const staticTotalRatings = 2;
 
-  // Build the office snippet (LocalBusiness) including reviews
   const officeSnippet = {
     "@type": "LocalBusiness",
-    "name": office.name,
-    "description": office.description,
-    "telephone": office.phone,
-    "url": window.location.href,
-    "image": locationImage,
-    "email": office.email,
-    "aggregateRating": {
+    name: office.name,
+    description: office.description,
+    telephone: office.phone,
+    url: window.location.href,
+    image: locationImage,
+    email: office.email,
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": staticRating,
-      "reviewCount": staticTotalRatings
+      ratingValue: staticRating,
+      reviewCount: staticTotalRatings,
     },
-    "review": staticReviews.map((review) => ({
+    review: staticReviews.map((review) => ({
       "@type": "Review",
-      "author": {
+      author: {
         "@type": "Person",
-        "name": review.author_name
+        name: review.author_name,
       },
-      "datePublished": review.datePublished,
-      "reviewBody": review.text,
-      "reviewRating": {
+      datePublished: review.datePublished,
+      reviewBody: review.text,
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": review.rating
-      }
-    }))
+        ratingValue: review.rating,
+      },
+    })),
   };
 
-  // Build service snippets from servicesArray
   const servicesSnippets = servicesArray.map((service) => {
     const serviceImage = isDesktop ? service.images.desktopHero : service.images.hero;
     return {
       "@type": "Service",
-      "name": service.title,
-      "description": service.shortDescription,
-      "url": `https://lightningseo.dev/services/${service.id}`,
-      "image": serviceImage,
-      "provider": {
+      name: service.title,
+      description: service.shortDescription,
+      url: `https://lightningseo.dev/services/${service.id}`,
+      image: serviceImage,
+      provider: {
         "@type": "Organization",
-        "name": "LightningSEO.dev",
-        "url": "https://lightningseo.dev",
-        "logo": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
-      }
+        name: "LightningSEO.dev",
+        url: "https://lightningseo.dev",
+        logo: "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp",
+      },
     };
   });
 
-  // Combine the office and services snippets in an @graph.
   const richSnippet = {
     "@context": "https://schema.org",
-    "@graph": [officeSnippet, ...servicesSnippets]
+    "@graph": [officeSnippet, ...servicesSnippets],
   };
 
   return (
@@ -115,12 +106,12 @@ const SingleLocation = ({ office }) => {
             <h2 className="sl-location-name">{office.name}</h2>
           </div>
           <div className="sl-location-info">
-            {/* No address: display a generic label */}
             <p className="sl-location-address">Service Offered</p>
+            <p className="sl-location-tagline">Websites. SEO. Results.</p>
           </div>
         </div>
 
-        {/* Redesigned Contact Info Section */}
+        {/* Contact Info Section */}
         <div className="sl-contact-info">
           <ul className="sl-contact-list">
             {office.phone && (
@@ -144,13 +135,13 @@ const SingleLocation = ({ office }) => {
           </ul>
         </div>
 
-        {/* Office Description */}
+        {/* Description Section */}
         <div className="sl-office-description">
           <h3>About {office.name}</h3>
           <p>{office.description}</p>
         </div>
 
-        {/* Services List Section */}
+        {/* Services List */}
         <div
           className="sl-services-section"
           style={{
@@ -172,11 +163,15 @@ const SingleLocation = ({ office }) => {
                   >
                     <div
                       className="sl-service-image"
-                      style={{ backgroundImage: `url(${service.images.hero})` }}
+                      style={{
+                        backgroundImage: `url(${service.images.hero})`,
+                      }}
                     ></div>
                     <div className="sl-service-info">
                       <h3 className="sl-service-name">{service.title}</h3>
-                      <p className="sl-service-short">{service.shortDescription}</p>
+                      <p className="sl-service-short">
+                        {service.shortDescription}
+                      </p>
                     </div>
                   </Link>
                 ))}
