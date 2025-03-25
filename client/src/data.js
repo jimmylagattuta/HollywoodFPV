@@ -254,11 +254,13 @@ export const servicesData = {
   }
 };
 
+
 export const serviceOfferedData = {
+  // -- Original Locations --
   "long-beach": {
     name: "Long Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/yYd5YH3G/i-Stock-1168194115-1-1.webp",
+    desktopImage: "https://i.postimg.cc/yYd5YH3G/i-Stock-1168194115-1-1.webp",
     description:
       "Serving Long Beach, CA with expert SEO strategies, website optimization, and digital marketing solutions that drive results. We make websites for businesses in Long Beach too!",
     phone: "8059980074",
@@ -268,8 +270,8 @@ export const serviceOfferedData = {
   },
   "seal-beach": {
     name: "Seal Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/CMHYfS1L/i-Stock-660791392-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/CMHYfS1L/i-Stock-660791392-1-1-1.webp",
     description:
       "Providing comprehensive SEO services in Seal Beach, CA to boost your online presence and drive organic traffic. We make websites for businesses in Seal Beach too!",
     phone: "8059980074",
@@ -279,8 +281,8 @@ export const serviceOfferedData = {
   },
   "huntington-beach": {
     name: "Huntington Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/g20YWQGc/i-Stock-1018058852-1-1.webp",
+    desktopImage: "https://i.postimg.cc/g20YWQGc/i-Stock-1018058852-1-1.webp",
     description:
       "Delivering tailored SEO solutions in Huntington Beach, CA that improve search rankings and digital performance. We make websites for businesses in Huntington Beach too!",
     phone: "8059980074",
@@ -290,8 +292,8 @@ export const serviceOfferedData = {
   },
   "san-pedro": {
     name: "San Pedro",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     description:
       "Offering advanced SEO and online marketing strategies in San Pedro, CA and nearby areas to enhance your brand’s digital footprint. We make websites for businesses in San Pedro too!",
     phone: "8059980074",
@@ -301,8 +303,8 @@ export const serviceOfferedData = {
   },
   "lakewood": {
     name: "Lakewood",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/3rySPBMM/i-Stock-1288201581-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/3rySPBMM/i-Stock-1288201581-1-1-1.webp",
     description:
       "Empowering businesses in Lakewood, CA with cutting-edge SEO techniques, content optimization, and local search strategies. We make websites for businesses in Lakewood too!",
     phone: "8059980074",
@@ -312,8 +314,8 @@ export const serviceOfferedData = {
   },
   "irvine": {
     name: "Irvine",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/43ZmVBgr/i-Stock-1192432287-1-1.webp",
+    desktopImage: "https://i.postimg.cc/43ZmVBgr/i-Stock-1192432287-1-1.webp",
     description:
       "Providing comprehensive SEO services in Irvine, CA including on-page optimization, link building, and performance analytics. We make websites for businesses in Irvine too!",
     phone: "8059980074",
@@ -323,8 +325,8 @@ export const serviceOfferedData = {
   },
   "anaheim": {
     name: "Anaheim",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     description:
       "Delivering customized SEO solutions in Anaheim, CA designed to increase online visibility and drive business growth. We make websites for businesses in Anaheim too!",
     phone: "8059980074",
@@ -334,8 +336,8 @@ export const serviceOfferedData = {
   },
   "santa-ana": {
     name: "Santa Ana",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Serving Santa Ana, CA with premium SEO services to enhance digital presence and maximize ROI. We make websites for businesses in Santa Ana too!",
     phone: "8059980074",
@@ -356,8 +358,8 @@ export const serviceOfferedData = {
   },
   "costa-mesa": {
     name: "Costa Mesa",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/9XqCXy3T/i-Stock-1193585935-1-2.webp",
+    desktopImage: "https://i.postimg.cc/9XqCXy3T/i-Stock-1193585935-1-2.webp",
     description:
       "Providing efficient SEO and digital marketing solutions in Costa Mesa, CA to elevate your online brand. We make websites for businesses in Costa Mesa too!",
     phone: "8059980074",
@@ -367,8 +369,8 @@ export const serviceOfferedData = {
   },
   "cypress": {
     name: "Cypress",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/fTjCYgnN/i-Stock-1201981141-1-1.webp",
+    desktopImage: "https://i.postimg.cc/fTjCYgnN/i-Stock-1201981141-1-1.webp",
     description:
       "Delivering quality SEO services in Cypress, CA with data-driven strategies and performance optimization. We make websites for businesses in Cypress too!",
     phone: "8059980074",
@@ -378,8 +380,8 @@ export const serviceOfferedData = {
   },
   "buena-park": {
     name: "Buena Park",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/TwF7HyCv/i-Stock-123091243-1-1.webp",
+    desktopImage: "https://i.postimg.cc/TwF7HyCv/i-Stock-123091243-1-1.webp",
     description:
       "Empowering Buena Park businesses with innovative SEO solutions and digital marketing expertise. We make websites for businesses in Buena Park too!",
     phone: "8059980074",
@@ -388,11 +390,11 @@ export const serviceOfferedData = {
     hours: ""
   },
 
-  // LOS ANGELES AREA - now using Newport Beach image
+  // -- New Los Angeles-Area Locations (with images assigned based on proximity) --
   "los-angeles": {
     name: "Los Angeles",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Offering premier SEO services across Los Angeles, CA to help businesses rank higher in search results and capture more leads. We make websites for businesses in Los Angeles too!",
     phone: "8059980074",
@@ -402,8 +404,8 @@ export const serviceOfferedData = {
   },
   "hollywood": {
     name: "Hollywood",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Boost your online presence with tailored SEO solutions for entertainment, hospitality, and other Hollywood-based industries. We make websites for businesses in Hollywood too!",
     phone: "8059980074",
@@ -413,8 +415,8 @@ export const serviceOfferedData = {
   },
   "beverly-hills": {
     name: "Beverly Hills",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Delivering high-end SEO strategies in Beverly Hills, CA for luxury brands, boutiques, and professional services. We make websites for businesses in Beverly Hills too!",
     phone: "8059980074",
@@ -424,8 +426,8 @@ export const serviceOfferedData = {
   },
   "west-hollywood": {
     name: "West Hollywood",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Providing comprehensive SEO and digital marketing services in West Hollywood, CA to elevate brand visibility. We make websites for businesses in West Hollywood too!",
     phone: "8059980074",
@@ -446,8 +448,8 @@ export const serviceOfferedData = {
   },
   "pasadena": {
     name: "Pasadena",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     description:
       "Enhancing online reach for Pasadena, CA businesses through result-oriented SEO techniques and targeted campaigns. We make websites for businesses in Pasadena too!",
     phone: "8059980074",
@@ -457,8 +459,8 @@ export const serviceOfferedData = {
   },
   "burbank": {
     name: "Burbank",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     description:
       "Specializing in SEO solutions for Burbank, CA’s media and entertainment businesses to stand out in a competitive market. We make websites for businesses in Burbank too!",
     phone: "8059980074",
@@ -468,8 +470,8 @@ export const serviceOfferedData = {
   },
   "glendale": {
     name: "Glendale",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
+    desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     description:
       "Offering advanced SEO and digital marketing in Glendale, CA, helping businesses connect with more local customers. We make websites for businesses in Glendale too!",
     phone: "8059980074",
@@ -479,8 +481,8 @@ export const serviceOfferedData = {
   },
   "culver-city": {
     name: "Culver City",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
+    desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
       "Delivering SEO and web optimization services in Culver City, CA, with a focus on tech startups and creative studios. We make websites for businesses in Culver City too!",
     phone: "8059980074",
@@ -490,8 +492,8 @@ export const serviceOfferedData = {
   },
   "manhattan-beach": {
     name: "Manhattan Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     description:
       "Driving growth for Manhattan Beach, CA businesses with local SEO strategies and mobile-optimized solutions. We make websites for businesses in Manhattan Beach too!",
     phone: "8059980074",
@@ -501,8 +503,8 @@ export const serviceOfferedData = {
   },
   "redondo-beach": {
     name: "Redondo Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     description:
       "Providing specialized SEO services in Redondo Beach, CA to boost visibility, site performance, and conversions. We make websites for businesses in Redondo Beach too!",
     phone: "8059980074",
@@ -512,8 +514,8 @@ export const serviceOfferedData = {
   },
   "hermosa-beach": {
     name: "Hermosa Beach",
-    heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
-    desktopImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
+    heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
+    desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     description:
       "Empowering Hermosa Beach, CA companies with strategic SEO campaigns that drive sustainable organic traffic. We make websites for businesses in Hermosa Beach too!",
     phone: "8059980074",
@@ -555,5 +557,3 @@ export const serviceOfferedData = {
     hours: ""
   }
 };
-
-
