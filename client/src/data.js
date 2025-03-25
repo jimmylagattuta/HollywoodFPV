@@ -254,7 +254,6 @@ export const servicesData = {
   }
 };
 
-
 export const serviceOfferedData = {
   "long-beach": {
     name: "Long Beach",
@@ -388,6 +387,8 @@ export const serviceOfferedData = {
     email: "jimmy.lagattuta@gmail.com",
     hours: ""
   },
+
+  // LOS ANGELES AREA - now using Newport Beach image
   "los-angeles": {
     name: "Los Angeles",
     heroImage: "https://i.postimg.cc/HkFtmGbb/i-Stock-1925763152-1-1.webp",
@@ -554,4 +555,5 @@ export const serviceOfferedData = {
     hours: ""
   }
 };
+
 

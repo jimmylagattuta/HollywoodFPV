@@ -129,11 +129,41 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog Section (If Applicable) -->
+  <!-- Blog Section -->
   <url>
     <loc>https://lightningseo.dev/blog</loc>
     <lastmod>2025-03-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- Location Pages -->
+  <url><loc>https://lightningseo.dev/locations/long-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/seal-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/huntington-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/san-pedro</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/lakewood</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/irvine</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/anaheim</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/santa-ana</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/newport-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/costa-mesa</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/cypress</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/buena-park</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/los-angeles</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/hollywood</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/beverly-hills</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/west-hollywood</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/santa-monica</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/pasadena</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/burbank</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/glendale</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/culver-city</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/manhattan-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/redondo-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/hermosa-beach</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/marina-del-rey</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/venice</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lightningseo.dev/locations/malibu</loc><lastmod>2025-03-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
 </urlset>
