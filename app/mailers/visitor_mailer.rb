@@ -1,10 +1,11 @@
 class VisitorMailer < ApplicationMailer
-    default to: 'your_email@example.com' # <- replace this with your real email
+    default to: 'jimmy.lagattuta@gmail.com' # Replace with your actual email address
   
     def send_visit_email
       @visitor = params[:visitor]
       mail(
-        subject: "New Website Visit from #{@visitor[:city]}, #{@visitor[:country]}"
+        subject: "New Website Visit from #{@visitor['city']}, #{@visitor['country']}"
       )
     end
-  end  
+  end
+  
