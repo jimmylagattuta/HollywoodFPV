@@ -41,7 +41,7 @@ function HeroSection() {
             <div className="line"></div>
           </div>
           <h1>
-            Don’t Blink—Experience <span className="highlight">Affordable, Lightning-Fast</span> Web Magic
+            Don’t Blink—Experience <span className="highlight">Affordable, Lightning-Fast</span> Websites
           </h1>
           <p className="hero-paragraph">
             Our websites load in a flash, delivering seamless, engaging experiences that outpace the rest. Our speed earns Google’s applause—ensuring your site takes center stage.
