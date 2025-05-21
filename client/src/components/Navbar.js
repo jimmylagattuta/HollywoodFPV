@@ -177,7 +177,7 @@ function Navbar() {
               </ul>
             )}
           </li>
-
+{/* 
           <li className="nav-item pricing-link" onClick={() => handleNavItemClick('/pricing')}>
             Pricing
           </li>
@@ -188,14 +188,14 @@ function Navbar() {
 
           <li className="nav-item faq-link" onClick={() => handleNavItemClick('/faq')}>
             FAQ
-          </li>
-
+          </li> */}
+{/* 
           <li className="nav-item aboutus-link" onClick={() => handleNavItemClick('/about-us')}>
             About Us
-          </li>
+          </li> */}
 
           <li className="nav-item book-appointment" onClick={handleContactClick}>
-            Free SEO Audit
+            Book a Flight
           </li>
         </ul>
       </div>
