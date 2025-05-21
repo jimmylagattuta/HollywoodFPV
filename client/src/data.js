@@ -1,129 +1,9 @@
-export const projectsData = {
-  "california-premier-pain-clinics": {
-    name: "California Premier Pain Clinics",
-    address: "Multi-Location Medical Organization",
-    url: "https://www.californiapremierpainclinics.com",
-    heroImage: "https://i.postimg.cc/xTGxVvsV/i-Stock-1262682182-1.webp",
-    desktopImage: "https://i.postimg.cc/vHW4b7gX/Screenshot-2025-03-17-034825-1-1.webp", // 282x170
-    tabletImage: "https://i.postimg.cc/XqgXc40m/Screenshot-2025-03-17-193758-1-1.webp", // 133x180
-    mobileImage: "https://i.postimg.cc/D0SY1ysy/Screenshot-2025-03-17-200526-1.webp", // 95x200
-    description:
-      "At California Premier Pain Clinics, our mission is to help you find relief and regain your quality of life. Our experts craft personalized treatment plans using advanced therapies to ensure the best outcomes for your recovery. Your path to a pain-free life begins here.",
-  },
-
-  "orthopedics-of-riverside": {
-    name: "Orthopedic Associates of Riverside",
-    address: "Advanced Orthopedic Care in Riverside",
-    url: "https://ortho-associates-of-riverside-12d6d06d6fbb.herokuapp.com",
-    heroImage: "https://i.imgur.com/A30o3rv.webp",
-    desktopImage: "https://i.postimg.cc/MpVcq7j5/Screenshot-2025-03-18-162546.webp", // 282x170
-    tabletImage: "https://i.postimg.cc/440ncL6w/Screenshot-2025-03-18-162828.webp", // 133x180
-    mobileImage: "https://i.postimg.cc/t43gL9Lm/Screenshot-2025-03-18-163017.webp", // 95x200
-    description:
-      "Orthopedics of Riverside offers expert orthopedic care, including sports medicine, joint replacements, and physical therapy. Our highly skilled physicians and therapists provide advanced treatments to restore mobility and improve quality of life.",
-  },
-
-  "subtitle-tsunami": {
-    name: "Subtitle Tsunami",
-    address: "AI-Powered Subtitle Generator",
-    url: "https://www.subtitletsunami.com",
-    heroImage: "https://i.postimg.cc/1379x4vB/Default-Play-1.webp",
-    desktopImage: "https://i.postimg.cc/6qZ7qnmB/Screenshot-2025-03-18-164010.webp", // 282x170
-    tabletImage: "https://i.postimg.cc/YCM424fw/Screenshot-2025-03-18-164216.webp", // 133x180
-    mobileImage: "https://i.postimg.cc/SKtjGg0y/Screenshot-2025-03-18-164359.webp", // 95x200
-    description:
-      "SubtitleTsunami is an AI-powered tool with a user interface that generates precise and customizable English to Spanish subtitles. Our platform offers editable, high-quality subtitles to enhance your video content, making it more accessible and engaging.",
-  },
-  "captain-alvarados-handyman": {
-  name: "Captain Alvarado's Handyman",
-  address: "San Luis Obispo County, CA, US",
-  url: "https://www.captainalvaradoshandyman.com",
-  heroImage: "https://i.postimg.cc/FzkSS275/i-Stock-1620004852-3.webp", // Replace with your hero image
-  desktopImage: "https://i.postimg.cc/c1cGyrH3/Screenshot-2025-03-18-170257.webp", // Replace with your desktop image
-  tabletImage: "https://i.postimg.cc/fT24ypYT/Screenshot-2025-03-18-170547-1.webp", // Replace with your tablet image
-  mobileImage: "https://i.postimg.cc/LsPGyswn/Screenshot-2025-03-18-170807.webp", // Replace with your mobile image
-  description:
-    "Reliable handyman services in San Luis Obispo County, specializing in home repairs, plumbing, painting, moving, and clean-outs. Contact us for professional handyman solutions!" 
-  },
-  "midland-ortho": {
-    name: "Midland Orthopedic Associates",
-    address: "Offices Located Across The Greater Chicago Area",
-    url: "https://midland-ortho.herokuapp.com/", // Placeholder URL; update as needed
-    heroImage: "https://i.postimg.cc/Mp3rkZTb/Fall-Bean-Chicago-1-2.webp", // Replace with your hero image
-    desktopImage: "https://i.postimg.cc/nhXGD4FB/Screenshot-2025-03-18-222252-3.webp", // Replace with your desktop image
-    tabletImage: "https://i.postimg.cc/yd2H7X8j/Screenshot-2025-03-18-222615.webp", // Replace with your tablet image
-    mobileImage: "https://i.postimg.cc/RVQjYzKX/Screenshot-2025-03-18-222807-1.webp", // Replace with your mobile image
-    description:
-      "Welcome to Midland Orthopedic Associates. Since 1964, our board-certified and fellowship-trained physicians have provided the highest quality orthopedic care. We offer advanced, comprehensive subspecialty care—including sports medicine, hand, shoulder and upper extremity, hip and knee, foot and ankle, total joint replacement, arthroscopic surgery, and trauma care—with expertise in treating injured workers under workers’ compensation."
-  },
-  "bcb-carts": {
-    name: "BCB Carts",
-    address: "123 Main Street, Long Beach, CA 90802", // Optional; remove if not needed
-    url: "https://bcbcarts.com",
-    heroImage: "https://i.postimg.cc/85ScTSXs/i-Stock-1328601529-2-1.webp", // Replace with your image URL
-    desktopImage: "https://i.postimg.cc/15HpTWtp/Screenshot-2025-03-18-215854.webp", // Replace with your image URL
-    tabletImage: "https://i.postimg.cc/qvD2Bz2q/Screenshot-2025-03-18-220045.webp", // Replace with your image URL
-    mobileImage: "https://i.postimg.cc/VvwCZMPG/Screenshot-2025-03-18-220219.webp", // Replace with your image URL
-    description:
-      "BCB Carts is your trusted partner in leisure-filled electric vehicles, offering sales, rentals, and repairs for eco-friendly, low-speed electric carts."
-  },
-  "laoss-scheduler": {
-    name: "LAOSS Scheduler App",
-    address: "Los Angeles, CA", // Optional – adjust or remove if not needed
-    url: "https://la-orthos-app-da82c790d223.herokuapp.com/",
-    heroImage: "https://i.postimg.cc/BvvqBB7Z/Screenshot-2025-03-18-230916-1-1.webp",       // Replace with your actual hero image URL
-    desktopImage: "https://i.postimg.cc/Wb8skZWN/Screenshot-2025-03-18-224428-1.webp", // Replace with your actual desktop image URL
-    tabletImage: "https://i.postimg.cc/CxdpnQn7/Screenshot-2025-03-18-225627.webp",   // Replace with your actual tablet image URL
-    mobileImage: "https://i.postimg.cc/jjV3qgHL/Screenshot-2025-03-18-225858-1.webp",   // Replace with your actual mobile image URL
-    description:
-      "LAOSS Scheduler App is a comprehensive scheduling tool for Los Angeles Orthopedic Surgery Specialists of Long Beach. Receptionists can efficiently answer calls, capture patient details including name, age, body part, insurance, and location, and then view which doctors are available. Doctors can be added, updated, or removed on the front end, while new body parts, locations, insurances, and age groups can also be managed dynamically."
-  },
-  
-  "los-angeles-orthos": {
-    name: "Los Angeles Orthopedic Surgery Specialists",
-    address: "Multiple Locations in Los Angeles, CA",
-    url: "https://la-orthos-bdc751615c67.herokuapp.com", // Update with the correct URL if available
-    heroImage: "https://i.postimg.cc/1Xtc9w4W/Foot-And-Ankle.webp", // Replace with your actual hero image URL
-    desktopImage: "https://i.postimg.cc/GtHG0RSV/Screenshot-2025-03-18-232456.webp", // Replace with your actual desktop image URL
-    tabletImage: "https://i.postimg.cc/jqmJWG1q/Screenshot-2025-03-18-232706.webp", // Replace with your actual tablet image URL
-    mobileImage: "https://i.postimg.cc/J4jSDHqT/Screenshot-2025-03-18-232835.webp", // Replace with your actual mobile image URL
-    description:
-      "Los Angeles Orthopedic Surgery Specialists offers state-of-the-art orthopedic care across multiple Los Angeles locations. Our expert physicians provide comprehensive services—from joint replacement and sports medicine to minimally invasive arthroscopic surgery. Contact us to experience leading-edge orthopedic care."
-  },
-
-  
-  "creekside-physical-therapy": {
-    name: "Creekside Physical Therapy",
-    address: "Portland, OR", // Adjust the address as needed
-    url: "https://creekside-physical-therapy-3c43d5dad481.herokuapp.com",
-    heroImage: "https://i.postimg.cc/52Np4XkQ/Screenshot-2025-03-18-233438.webp", // Replace with your actual hero image URL
-    desktopImage: "https://i.postimg.cc/52Np4XkQ/Screenshot-2025-03-18-233438.webp", // Replace with your actual desktop image URL
-    tabletImage: "https://i.postimg.cc/85WmKMs9/Screenshot-2025-03-18-233705.webp", // Replace with your actual tablet image URL
-    mobileImage: "https://i.postimg.cc/tThFtbMH/Screenshot-2025-03-18-233836.webp", // Replace with your actual mobile image URL
-    description:
-      "Creekside Physical Therapy provides state-of-the-art rehabilitation services in Portland, OR. Our experienced team delivers personalized physical therapy treatments designed to improve mobility, reduce pain, and enhance overall wellness. Explore our innovative programs tailored to your unique needs."
-  },
-
-  "northwest-extremity-specialists": {
-    name: "Northwest Extremity Specialists",
-    address: "Portland, OR", // Update as necessary
-    url: "https://northwest-extremity-specialists.herokuapp.com", // Replace with your actual URL if different
-    heroImage: "https://i.postimg.cc/BnkFrtW0/Screenshot-2025-03-18-234227.webp", // Replace with your actual hero image URL
-    desktopImage: "https://i.postimg.cc/BnkFrtW0/Screenshot-2025-03-18-234227.webp", // Replace with your actual desktop image URL
-    tabletImage: "https://i.postimg.cc/qMYgRY1c/Screenshot-2025-03-18-234501.webp", // Replace with your actual tablet image URL
-    mobileImage: "https://i.postimg.cc/NMJBn9V8/Screenshot-2025-03-18-234637.webp", // Replace with your actual mobile image URL
-    description:
-      "Northwest Extremity Specialists provides advanced orthopedic and podiatric care in Portland, OR. Our team is dedicated to offering state-of-the-art treatments for a wide range of musculoskeletal conditions, including ligament reconstruction, arthritis care, joint injections, and sports medicine. Experience personalized care and innovative therapies designed to restore mobility and improve your quality of life."
-  },
-};
-
-
-
 export const servicesData = {
-  "on-page-seo": {
-    title: "On-Page SEO Optimization",
-    shortDescription: "Optimize your website’s content, meta tags, and structure for higher search engine rankings.",
-    mainContent: "Our on-page SEO service includes thorough keyword research, meta tag optimization, content restructuring, and strategic internal linking to boost your site’s visibility and engagement.",
+  "graduation-drone-video": {
+    title: "Graduation Aerial Videography",
+    shortDescription: "Celebrate academic milestones with smooth, sweeping drone footage.",
+    mainContent: "We capture the excitement and elegance of graduation ceremonies from the sky — delivering cinematic edits perfect for sharing with family or showcasing school spirit.",
+    price: "$250 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -132,10 +12,11 @@ export const servicesData = {
     }
   },
 
-  "technical-seo": {
-    title: "Technical SEO & Website Performance",
-    shortDescription: "Improve your website’s technical health and speed for better search rankings.",
-    mainContent: "We address slow loading times, mobile responsiveness, structured data, and crawl errors to ensure your website meets Google's best practices.",
+  "wedding-drone-coverage": {
+    title: "Wedding Drone Coverage",
+    shortDescription: "Capture every breathtaking moment from the sky on your special day.",
+    mainContent: "From venue overviews to first dances and golden hour flyovers, our aerial footage enhances wedding memories with a cinematic touch.",
+    price: "$500 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -144,10 +25,11 @@ export const servicesData = {
     }
   },
 
-  "content-seo": {
-    title: "Content SEO & Strategy",
-    shortDescription: "Develop and optimize content that resonates with your audience and search engines.",
-    mainContent: "We craft keyword-rich articles, engaging blog posts, and optimized landing pages to improve organic traffic and user engagement.",
+  "airbnb-drone-promos": {
+    title: "Airbnb & Rental Property Drone Promos",
+    shortDescription: "Show off your listing from stunning angles that attract more bookings.",
+    mainContent: "We produce polished aerial tours that highlight your Airbnb’s location, layout, and surrounding scenery — perfect for your listing page and socials.",
+    price: "$200 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -156,10 +38,11 @@ export const servicesData = {
     }
   },
 
-  "seo-audit": {
-    title: "Comprehensive SEO Audits",
-    shortDescription: "Identify opportunities and issues with an in-depth SEO analysis.",
-    mainContent: "Our SEO audits cover on-page and technical factors, providing actionable insights for improving your website’s performance.",
+  "commercial-drone-shoots": {
+    title: "Commercial Drone Shoots",
+    shortDescription: "Create impactful aerial visuals that elevate your marketing campaigns.",
+    mainContent: "Whether launching a product or branding a service, we deliver smooth, cinematic shots tailored for advertising, promos, and digital content.",
+    price: "$300 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -168,10 +51,11 @@ export const servicesData = {
     }
   },
 
-  "seo-consulting": {
-    title: "SEO Consulting & Strategy Development",
-    shortDescription: "Tailor-made SEO strategies to meet your unique business goals.",
-    mainContent: "We offer personalized SEO consulting, including competitive analysis, strategy development, and performance tracking.",
+  "property-drone-tours": {
+    title: "Real Estate & Property Drone Tours",
+    shortDescription: "Present homes and buildings with clarity and cinematic style.",
+    mainContent: "Our aerial walkthroughs highlight curb appeal, property features, and nearby attractions — helping listings stand out to prospective buyers and renters.",
+    price: "$220 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -180,10 +64,11 @@ export const servicesData = {
     }
   },
 
-  "link-building": {
-    title: "Link Building & Off-Page SEO",
-    shortDescription: "Enhance your site’s authority with high-quality backlinks from trusted sources.",
-    mainContent: "We acquire high-quality backlinks through strategic outreach, guest posting, and influencer partnerships to boost your rankings.",
+  "event-drone-coverage": {
+    title: "Event & Party Drone Coverage",
+    shortDescription: "Capture your celebration from thrilling new perspectives.",
+    mainContent: "From birthdays to business launches, we fly overhead and through the action to deliver energetic highlight reels that wow guests and viewers alike.",
+    price: "$250 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -192,10 +77,11 @@ export const servicesData = {
     }
   },
 
-  "local-seo": {
-    title: "Local SEO Solutions",
-    shortDescription: "Boost your local visibility with targeted strategies that drive nearby traffic.",
-    mainContent: "We optimize your Google My Business profile, build local citations, and leverage geo-specific keywords to reach local customers.",
+  "social-media-drone": {
+    title: "Social Media Drone Content",
+    shortDescription: "Scroll-stopping aerial clips made for TikTok, Instagram, and YouTube.",
+    mainContent: "Our short-form drone content is edited specifically for mobile and vertical feeds — ideal for creators, influencers, and brands seeking attention-grabbing visuals.",
+    price: "$200 per hour",
     images: {
       hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
       desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
@@ -204,68 +90,84 @@ export const servicesData = {
     }
   },
 
-  "web-development": {
-    title: "Website Development & Design",
-    shortDescription: "Create a responsive, engaging, and SEO-friendly website that represents your brand.",
-    mainContent: "Our web development service focuses on building visually appealing websites optimized for search engines and user experience.",
+  "film-drone-cinematography": {
+    title: "Cinematic Drone Videography for Film",
+    shortDescription: "Precision drone flying for movies, shorts, and music videos.",
+    mainContent: "We coordinate with your film crew to capture dynamic aerial shots that enhance storytelling — from chase sequences to scenic reveals and motion-matched tracking.",
+    price: "$600 per hour",
     images: {
-      hero: "https://i.postimg.cc/65rkYgqp/i-Stock-1961517902-1-1.webp",
-      desktopHero: "https://i.postimg.cc/wMJCKbkF/i-Stock-1961517902-1-2.webp",
-      content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
-      desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
-    }
-  },
-  "web-app": {
-    title: "Web Application Development",
-    shortDescription: "Develop robust web applications tailored to your business needs.",
-    mainContent: "We create scalable, secure, and feature-rich web applications to streamline operations and engage users.",
-    images: {
-      hero: "https://i.postimg.cc/65rkYgqp/i-Stock-1961517902-1-1.webp",
-      desktopHero: "https://i.postimg.cc/wMJCKbkF/i-Stock-1961517902-1-2.webp",
+      hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
+      desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
       content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
       desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
     }
   },
 
-  "mobile-app": {
-    title: "Mobile Application Development",
-    shortDescription: "Design and develop mobile apps that deliver an exceptional user experience.",
-    mainContent: "We develop native iOS and Android apps with a focus on performance and intuitive UI.",
+  "construction-progress-monitoring": {
+    title: "Construction Progress Monitoring",
+    shortDescription: "Track your project's development with regular aerial updates.",
+    mainContent: "We provide consistent drone footage to monitor construction progress, ensuring stakeholders stay informed with high-quality visuals.",
+    price: "$400 per hour",
     images: {
-      hero: "https://i.postimg.cc/tRMQsWf9/i-Stock-1961529307-1-2.webp",
-      desktopHero: "https://i.postimg.cc/053FkxMQ/i-Stock-1961529307-2-1-1.webp",
+      hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
+      desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
       content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
       desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
     }
   },
-  "watch-app": {
-    title: "Smart Watch App Development",
-    shortDescription: "Build companion apps for Smart Watches to extend your digital ecosystem.",
-    mainContent:
-      "Our watchOS and Android Play Store app development service focuses on creating sleek and functional apps for the Apple Watch. Leveraging Swift and SwiftUI, we build watch apps that integrate seamlessly with your existing iOS solutions, offering unique experiences right on the wrist.",
+
+  "agriculture-drone-services": {
+    title: "Agricultural Drone Services",
+    shortDescription: "Enhance crop management with aerial insights.",
+    mainContent: "Our drones assist in monitoring crop health, irrigation, and field conditions, providing valuable data to optimize agricultural practices.",
+    price: "$300 per hour",
     images: {
-      hero: "https://i.postimg.cc/NfTKb1Wx/i-Stock-2055845781-1.webp", // Updated Mobile Image
-      desktopHero: "https://i.postimg.cc/GtxZhg4Q/i-Stock-2055845781-2-1.webp", // Updated Desktop Image
-      content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp", // Universal Content Image
-      desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
-      section: "https://i.postimg.cc/NfTKb1Wx/i-Stock-2055845781-1.webp",
-      desktopSection: "https://i.postimg.cc/GtxZhg4Q/i-Stock-2055845781-2-1.webp"
+      hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
+      desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
+      content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
+      desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
+    }
+  },
+
+  "drone-mapping-surveying": {
+    title: "Drone Mapping and Surveying",
+    shortDescription: "Accurate aerial mapping for various industries.",
+    mainContent: "We offer precise drone mapping and surveying services, suitable for construction, agriculture, and land development projects.",
+    price: "$350 per hour",
+    images: {
+      hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
+      desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
+      content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
+      desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
+    }
+  },
+
+  "roof-infrastructure-inspections": {
+    title: "Infrastructure and Roof Inspections",
+    shortDescription: "Safe and efficient aerial inspections of structures.",
+    mainContent: "Our drones provide detailed visuals for inspecting roofs, bridges, and other infrastructures, reducing the need for manual inspections.",
+    price: "$250 per hour",
+    images: {
+      hero: "https://i.postimg.cc/MGjWdtQZ/i-Stock-1076326738-1-1.webp",
+      desktopHero: "https://i.postimg.cc/DwSgpbyy/i-Stock-1076326738-2-1-1.webp",
+      content: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp",
+      desktopContent: "https://i.postimg.cc/yY5tvKX9/i-Stock-1838374800-1-1.webp"
     }
   }
 };
 
 
+
 export const serviceOfferedData = {
-  // -- Original Locations --
   "long-beach": {
     name: "Long Beach",
     heroImage: "https://i.postimg.cc/yYd5YH3G/i-Stock-1168194115-1-1.webp",
     desktopImage: "https://i.postimg.cc/yYd5YH3G/i-Stock-1168194115-1-1.webp",
     description:
-      "Serving Long Beach, CA with expert SEO strategies, website optimization, and digital marketing solutions that drive results. We make websites for businesses in Long Beach too!",
+      "Hollywood FPV provides drone cinematography in Long Beach, CA for real estate, events, and creative productions. Bring your vision to life from the sky.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
+    email: "fpvhollywood@gmail.com",
     hours: "Mo-Fr 09:00-18:00"
   },
   "seal-beach": {
@@ -273,133 +175,199 @@ export const serviceOfferedData = {
     heroImage: "https://i.postimg.cc/CMHYfS1L/i-Stock-660791392-1-1-1.webp",
     desktopImage: "https://i.postimg.cc/CMHYfS1L/i-Stock-660791392-1-1-1.webp",
     description:
-      "Providing comprehensive SEO services in Seal Beach, CA to boost your online presence and drive organic traffic. We make websites for businesses in Seal Beach too!",
+      "Drone videography and aerial content for Airbnb hosts, property listings, and event coverage in Seal Beach, CA.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "huntington-beach": {
     name: "Huntington Beach",
     heroImage: "https://i.postimg.cc/g20YWQGc/i-Stock-1018058852-1-1.webp",
     desktopImage: "https://i.postimg.cc/g20YWQGc/i-Stock-1018058852-1-1.webp",
     description:
-      "Delivering tailored SEO solutions in Huntington Beach, CA that improve search rankings and digital performance. We make websites for businesses in Huntington Beach too!",
+      "Serving Huntington Beach, CA with beachside drone videos, weddings, and social content tailored for lifestyle brands.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "san-pedro": {
     name: "San Pedro",
     heroImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     desktopImage: "https://i.postimg.cc/fb2SsmGp/i-Stock-1357542834-1-1.webp",
     description:
-      "Offering advanced SEO and online marketing strategies in San Pedro, CA and nearby areas to enhance your brand’s digital footprint. We make websites for businesses in San Pedro too!",
+      "FPV drone coverage in San Pedro, CA — perfect for capturing ports, cliffsides, and events with cinematic style.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "lakewood": {
     name: "Lakewood",
     heroImage: "https://i.postimg.cc/3rySPBMM/i-Stock-1288201581-1-1-1.webp",
     desktopImage: "https://i.postimg.cc/3rySPBMM/i-Stock-1288201581-1-1-1.webp",
     description:
-      "Empowering businesses in Lakewood, CA with cutting-edge SEO techniques, content optimization, and local search strategies. We make websites for businesses in Lakewood too!",
+      "Providing drone filming services in Lakewood, CA — ideal for homes, rentals, events, and branded reels.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "irvine": {
     name: "Irvine",
     heroImage: "https://i.postimg.cc/43ZmVBgr/i-Stock-1192432287-1-1.webp",
     desktopImage: "https://i.postimg.cc/43ZmVBgr/i-Stock-1192432287-1-1.webp",
     description:
-      "Providing comprehensive SEO services in Irvine, CA including on-page optimization, link building, and performance analytics. We make websites for businesses in Irvine too!",
+      "Offering clean, professional drone coverage in Irvine, CA for commercial properties, events, and social media content.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "anaheim": {
     name: "Anaheim",
     heroImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     desktopImage: "https://i.postimg.cc/HLC73TQv/i-Stock-1185569454-1-1.webp",
     description:
-      "Delivering customized SEO solutions in Anaheim, CA designed to increase online visibility and drive business growth. We make websites for businesses in Anaheim too!",
+      "High-quality drone footage in Anaheim, CA for events, attractions, and business marketing.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "santa-ana": {
     name: "Santa Ana",
     heroImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     desktopImage: "https://i.postimg.cc/htQ9pCNv/i-Stock-1346654769-1-1-1.webp",
     description:
-      "Serving Santa Ana, CA with premium SEO services to enhance digital presence and maximize ROI. We make websites for businesses in Santa Ana too!",
+      "Serving Santa Ana, CA with professional drone visuals for social content, weddings, rentals, and branded campaigns.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "newport-beach": {
     name: "Newport Beach",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874436/iStock-950875630_ofpuc1.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874436/iStock-950875630_ofpuc1.webp",
     description:
-      "Offering strategic SEO services in Newport Beach, CA to help businesses rank higher and attract quality traffic. We make websites for businesses in Newport Beach too!",
+      "Cinematic drone filming in Newport Beach, CA — showcasing homes, events, and waterfront views in full motion.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "costa-mesa": {
     name: "Costa Mesa",
     heroImage: "https://i.postimg.cc/9XqCXy3T/i-Stock-1193585935-1-2.webp",
     desktopImage: "https://i.postimg.cc/9XqCXy3T/i-Stock-1193585935-1-2.webp",
     description:
-      "Providing efficient SEO and digital marketing solutions in Costa Mesa, CA to elevate your online brand. We make websites for businesses in Costa Mesa too!",
+      "Drone shoots for businesses, rentals, and creators in Costa Mesa, CA. Clean edits. High-res delivery.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "cypress": {
     name: "Cypress",
     heroImage: "https://i.postimg.cc/fTjCYgnN/i-Stock-1201981141-1-1.webp",
     desktopImage: "https://i.postimg.cc/fTjCYgnN/i-Stock-1201981141-1-1.webp",
     description:
-      "Delivering quality SEO services in Cypress, CA with data-driven strategies and performance optimization. We make websites for businesses in Cypress too!",
+      "We bring drone videography to Cypress, CA — ideal for real estate tours, social clips, and creative productions.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "buena-park": {
     name: "Buena Park",
     heroImage: "https://i.postimg.cc/TwF7HyCv/i-Stock-123091243-1-1.webp",
     desktopImage: "https://i.postimg.cc/TwF7HyCv/i-Stock-123091243-1-1.webp",
     description:
-      "Empowering Buena Park businesses with innovative SEO solutions and digital marketing expertise. We make websites for businesses in Buena Park too!",
+      "Hollywood FPV offers drone services in Buena Park, CA for commercial and personal use — fast turnaround, pro results.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
 
-  // -- New Los Angeles-Area Locations (with images assigned based on proximity) --
-  "los-angeles": {
+  // 🔥 Newly Added Cities for SEO Boost
+  "bellflower": {
+    name: "Bellflower",
+    heroImage: "https://i.postimg.cc/8Pb6zBQx/i-Stock-1140464044.webp",
+    desktopImage: "https://i.postimg.cc/8Pb6zBQx/i-Stock-1140464044.webp",
+    description:
+      "FPV Hollywood provides cinematic drone videography in Bellflower, CA for real estate, events, short-term rentals, and creative storytelling.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+  "downey": {
+    name: "Downey",
+    heroImage: "https://i.postimg.cc/1X07dQHd/i-Stock-1320287435.webp",
+    desktopImage: "https://i.postimg.cc/1X07dQHd/i-Stock-1320287435.webp",
+    description:
+      "Capturing stunning aerial content in Downey, CA — perfect for events, parties, and real estate listings. Drone services tailored for social media and professional use.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+  "norwalk": {
+    name: "Norwalk",
+    heroImage: "https://i.postimg.cc/JzMBrBpc/i-Stock-1273826222.webp",
+    desktopImage: "https://i.postimg.cc/JzMBrBpc/i-Stock-1273826222.webp",
+    description:
+      "Providing cinematic drone visuals in Norwalk, CA for property tours, weddings, and commercial content creation.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+  "compton": {
+    name: "Compton",
+    heroImage: "https://i.postimg.cc/3RGPBJmN/i-Stock-1312032952.webp",
+    desktopImage: "https://i.postimg.cc/3RGPBJmN/i-Stock-1312032952.webp",
+    description:
+      "FPV Hollywood delivers dynamic drone cinematography in Compton, CA. From music videos to brand shoots, we help your visuals stand out.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+  "paramount": {
+    name: "Paramount",
+    heroImage: "https://i.postimg.cc/1Xc8C1wp/i-Stock-1438371133.webp",
+    desktopImage: "https://i.postimg.cc/1Xc8C1wp/i-Stock-1438371133.webp",
+    description:
+      "Aerial content creation for properties, events, and media campaigns in Paramount, CA. Get cinematic drone shots customized for your project.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+  "south-gate": {
+    name: "South Gate",
+    heroImage: "https://i.postimg.cc/L8QpNZsf/i-Stock-1288287519.webp",
+    desktopImage: "https://i.postimg.cc/L8QpNZsf/i-Stock-1288287519.webp",
+    description:
+      "South Gate, CA drone videography for social content, real estate tours, and community event coverage — all filmed with Hollywood-level creativity.",
+    phone: "8059980074",
+    fax: "",
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
+  },
+    "los-angeles": {
     name: "Los Angeles",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874806/iStock-2150043738_hl5rfm.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874806/iStock-2150043738_hl5rfm.webp",
     description:
-      "Offering premier SEO services across Los Angeles, CA to help businesses rank higher in search results and capture more leads. We make websites for businesses in Los Angeles too!",
+      "Drone cinematography across Los Angeles, CA — covering events, real estate, branded shoots, and viral content production.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
+    email: "fpvhollywood@gmail.com",
     hours: "Mo-Fr 09:00-18:00"
   },
   "hollywood": {
@@ -407,153 +375,153 @@ export const serviceOfferedData = {
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875216/iStock-901224272_kk340i.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875216/iStock-901224272_kk340i.webp",
     description:
-      "Boost your online presence with tailored SEO solutions for entertainment, hospitality, and other Hollywood-based industries. We make websites for businesses in Hollywood too!",
+      "FPV Hollywood's home base — we provide cinematic aerial content for the entertainment, fashion, and real estate scenes of Hollywood, CA.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "beverly-hills": {
     name: "Beverly Hills",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875342/iStock-1824715763_ijv6jm.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875342/iStock-1824715763_ijv6jm.webp",
     description:
-      "Delivering high-end SEO strategies in Beverly Hills, CA for luxury brands, boutiques, and professional services. We make websites for businesses in Beverly Hills too!",
+      "Luxury aerial video and creative drone services for high-end brands, influencers, and events in Beverly Hills, CA.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "west-hollywood": {
     name: "West Hollywood",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873885/iStock-1197001565_cdknqc.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873885/iStock-1197001565_cdknqc.webp",
     description:
-      "Providing comprehensive SEO and digital marketing services in West Hollywood, CA to elevate brand visibility. We make websites for businesses in West Hollywood too!",
+      "Cinematic FPV and drone visuals for nightlife venues, rooftop shoots, and creatives in West Hollywood, CA.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "santa-monica": {
     name: "Santa Monica",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874172/iStock-920371008_rvsmnk.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874172/iStock-920371008_rvsmnk.webp",
     description:
-      "Helping businesses in Santa Monica, CA thrive online with SEO-driven content strategies and local optimization. We make websites for businesses in Santa Monica too!",
+      "We fly the coastlines and cityscape of Santa Monica, CA — drone content for real estate, surf, and digital media brands.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "pasadena": {
     name: "Pasadena",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875445/iStock-2176284032_lvoxct.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875445/iStock-2176284032_lvoxct.webp",
     description:
-      "Enhancing online reach for Pasadena, CA businesses through result-oriented SEO techniques and targeted campaigns. We make websites for businesses in Pasadena too!",
+      "Drone photography and FPV film support for venues, homes, and creative content in Pasadena, CA.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "burbank": {
     name: "Burbank",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875577/iStock-2198809041_t7vudh.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875577/iStock-2198809041_t7vudh.webp",
     description:
-      "Specializing in SEO solutions for Burbank, CA’s media and entertainment businesses to stand out in a competitive market. We make websites for businesses in Burbank too!",
+      "Burbank, CA drone services for studios, production lots, and commercial spaces — FAA compliant and highly cinematic.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "glendale": {
     name: "Glendale",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875663/iStock-1290550431_mjw6fp.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875663/iStock-1290550431_mjw6fp.webp",
     description:
-      "Offering advanced SEO and digital marketing in Glendale, CA, helping businesses connect with more local customers. We make websites for businesses in Glendale too!",
+      "FPV drone shoots in Glendale, CA for apartments, malls, retail spots, and short-form ad content.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "culver-city": {
     name: "Culver City",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875807/iStock-1437611101_lcoh2s.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742875807/iStock-1437611101_lcoh2s.webp",
     description:
-      "Delivering SEO and web optimization services in Culver City, CA, with a focus on tech startups and creative studios. We make websites for businesses in Culver City too!",
+      "Covering creative agencies and production offices in Culver City, CA with smooth drone content for commercials and portfolios.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "manhattan-beach": {
     name: "Manhattan Beach",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874663/iStock-1727998258_eztxwx.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874663/iStock-1727998258_eztxwx.webp",
     description:
-      "Driving growth for Manhattan Beach, CA businesses with local SEO strategies and mobile-optimized solutions. We make websites for businesses in Manhattan Beach too!",
+      "Manhattan Beach drone services for beachfront homes, outdoor events, and commercial real estate flyovers.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "redondo-beach": {
     name: "Redondo Beach",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874317/iStock-2171431581_vj5zxp.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874317/iStock-2171431581_vj5zxp.webp",
     description:
-      "Providing specialized SEO services in Redondo Beach, CA to boost visibility, site performance, and conversions. We make websites for businesses in Redondo Beach too!",
+      "Cinematic FPV and aerial tours available in Redondo Beach, CA — ideal for homes, hospitality, and real estate agents.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "hermosa-beach": {
     name: "Hermosa Beach",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874552/iStock-638164694_xkx7ay.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874552/iStock-638164694_xkx7ay.webp",
     description:
-      "Empowering Hermosa Beach, CA companies with strategic SEO campaigns that drive sustainable organic traffic. We make websites for businesses in Hermosa Beach too!",
+      "Hollywood FPV shoots surfside homes, parties, and real estate in Hermosa Beach, CA — smooth cinematic drone passes with professional editing.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "marina-del-rey": {
     name: "Marina del Rey",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874726/iStock-1297508424_n36pdf.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874726/iStock-1297508424_n36pdf.webp",
     description:
-      "Optimizing online visibility for Marina del Rey, CA businesses through advanced SEO strategies and local listings. We make websites for businesses in Marina del Rey too!",
+      "Aerial coverage in Marina del Rey, CA for yacht clubs, coastal properties, and branded content creators.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "venice": {
     name: "Venice",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874002/iStock-1552739687_t4gc75.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742874002/iStock-1552739687_t4gc75.webp",
     description:
-      "Helping Venice, CA entrepreneurs and creative brands gain traction in search results with tailored SEO solutions. We make websites for businesses in Venice too!",
+      "Venice Beach, CA drone coverage for social creators, small businesses, and real estate listings with style.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   },
   "malibu": {
     name: "Malibu",
     heroImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873644/iStock-506010292_szrrji.webp",
     desktopImage: "https://res.cloudinary.com/djtsuktwb/image/upload/w_500,h_200,c_fill,q_auto,f_webp/v1742873644/iStock-506010292_szrrji.webp",
     description:
-      "Offering bespoke SEO services in Malibu, CA for luxury real estate, hospitality, and lifestyle-focused businesses. We make websites for businesses in Malibu too!",
+      "Elite drone filming in Malibu, CA for estates, rooftops, luxury events, and marketing projects with aerial impact.",
     phone: "8059980074",
     fax: "",
-    email: "jimmy.lagattuta@gmail.com",
-    hours: ""
+    email: "fpvhollywood@gmail.com",
+    hours: "Mo-Fr 09:00-18:00"
   }
 };

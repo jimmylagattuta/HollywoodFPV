@@ -21,7 +21,7 @@ const Services = () => {
   if (!service) {
     return (
       <div className="service-page">
-        <p className="small-heading">LightningSEO.dev</p>
+        <p className="small-heading">Hollywood FPV</p>
         <h1>Service Not Found</h1>
         <p>We couldn’t find the service you’re looking for.</p>
         <Link to="/services">Go back to all services</Link>
@@ -29,79 +29,45 @@ const Services = () => {
     );
   }
 
-  // Ensure hero and content images are different
   const heroImage = isDesktop ? service.images.desktopHero : service.images.hero;
   const contentImage = isDesktop ? service.images.desktopContent : service.images.content;
   const sectionImage = isDesktop ? service.images.desktopSection : service.images.section;
   const whyChooseBg = isDesktop && service.desktopWhyChooseBg ? service.desktopWhyChooseBg : service.whyChooseBg;
 
-  // Hardcoded Google Reviews (Temporary)
-  const staticReviews = [
-    {
-      author_name: "Alex Alvarado",
-      rating: 5,
-      text: "Thanks for my web page. My impressions went from 4-30 in no time.. highly recommend!!!",
-      datePublished: "2025-03-20T04:00:00Z",
-    },
-    {
-      author_name: "Bcb Cartz",
-      rating: 5,
-      text: "James helped us increase our website traffic by quadruple and more! He has wonderful problem-solving skills with a great positive attitude and always respectful. Highly recommended!",
-      datePublished: "2025-03-15T12:00:00Z",
-    }
-  ];
-  const staticRating = 5.0;
-  const staticTotalRatings = staticReviews.length;
-
-  // Build the rich snippet for the service including reviews
   const serviceRichSnippet = {
     "@type": "Service",
-    "name": service.title,
-    "description": service.shortDescription,
-    "url": `https://lightningseo.dev/services/${serviceId}`,
-    "image": heroImage,
-    "provider": {
+    name: service.title,
+    description: service.shortDescription,
+    url: `https://hollywood-fpv-e9adcc4a24d9.herokuapp.com/services/${serviceId}`,
+    image: heroImage,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      price: service.price?.replace(/[^\d.]/g, "") || "0",
+      availability: "https://schema.org/InStock"
+    },
+    provider: {
       "@type": "Organization",
-      "name": "LightningSEO.dev",
-      "url": "https://lightningseo.dev",
-      "logo": "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
+      name: "Hollywood FPV",
+      url: "https://hollywood-fpv-e9adcc4a24d9.herokuapp.com/",
+      logo: "https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
     },
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://lightningseo.dev/services/${serviceId}`
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": staticRating,
-      "reviewCount": staticTotalRatings
-    },
-    "review": staticReviews.map((review) => ({
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": review.author_name
-      },
-      "datePublished": review.datePublished,
-      "reviewBody": review.text,
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": review.rating
-      }
-    }))
+      "@id": `https://hollywood-fpv-e9adcc4a24d9.herokuapp.com/services/${serviceId}`
+    }
   };
 
-  // Build location (LocalBusiness) snippets from serviceOfferedData
   const locationsSnippet = Object.entries(serviceOfferedData).map(([key, location]) => ({
     "@type": "LocalBusiness",
-    "name": location.name,
-    "description": location.description,
-    "telephone": location.phone,
-    "url": `https://lightningseo.dev/locations/${key}`,
-    "image": location.desktopImage || location.heroImage,
-    "email": location.email
+    name: location.name,
+    description: location.description,
+    telephone: location.phone,
+    url: `https://hollywood-fpv-e9adcc4a24d9.herokuapp.com/locations/${key}`,
+    image: location.desktopImage || location.heroImage,
+    email: location.email
   }));
 
-  // Combine both service and locations in an @graph
   const richSnippet = {
     "@context": "https://schema.org",
     "@graph": [serviceRichSnippet, ...locationsSnippet]
@@ -116,92 +82,61 @@ const Services = () => {
       </Helmet>
 
       <div className="service-page">
-        {/* HERO SECTION */}
-        <div
-          className="service-hero"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
+        <div className="service-hero" style={{ backgroundImage: `url(${heroImage})` }}>
           <div className="services-hero-overlay">
             <div className="services-hero-content-title">
               <div className="line"></div>
-              <h1 className="company-name-services">LightningSEO.dev</h1>
+              <h1 className="company-name-services">Hollywood FPV</h1>
               <div className="line"></div>
             </div>
-
             <div className="black-background">
               <h1 className="hero-title">{service.title}</h1>
               <p className="hero-description">{service.shortDescription}</p>
+              <p className="hero-description"><strong>Starting at: {service.price}</strong></p>
             </div>
-            
             <Link to="/contact#contactForm" className="cta-button">
-              Get a Free SEO Audit
+              Get a Free Quote
             </Link>
           </div>
         </div>
 
-        {/* MAIN CONTENT SECTION */}
         <div className="service-content">
           <div className="content-section">
             <img src={contentImage} alt={service.title} className="content-image" />
-
             <div className="service-content-with-title">
               <h1 id="services-title-small">{service.title}</h1>
-              
               <div className="content-text">
-                {typeof service.mainContent === "string" ? (
-                  service.mainContent.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph.trim()}</p>
-                  ))
-                ) : (
-                  <p>{JSON.stringify(service.mainContent)}</p>
-                )}
+                {typeof service.mainContent === "string"
+                  ? service.mainContent.split("\n\n").map((paragraph, index) => (
+                      <p key={index}>{paragraph.trim()}</p>
+                    ))
+                  : <p>{JSON.stringify(service.mainContent)}</p>}
               </div>
-              {/* Website Link */}
               {service.url && (
                 <p className="service-website">
-                  <strong>Website:</strong>{" "}
-                  <a href={service.url} target="_blank" rel="noopener noreferrer">
-                    {service.url}
-                  </a>
+                  <strong>Website:</strong> <a href={service.url} target="_blank" rel="noopener noreferrer">{service.url}</a>
                 </p>
               )}
             </div>
           </div>
         </div>
 
-        {/* INFO SECTION */}
         {service.whyChooseTitle && (
           <div className="info-section" style={{ backgroundImage: `url(${whyChooseBg})` }}>
             <div className="info-overlay">
               <h2 className="info-title">{service.whyChooseTitle}</h2>
               <p className="info-text">{service.whyChooseContent}</p>
-
               {service.helpTitle && (
                 <>
                   <h3 className="info-subtitle">{service.helpTitle}</h3>
                   <ul className="info-list">
-                    {service.servicesOffered && Array.isArray(service.servicesOffered) && (
-                      <ul className="info-list">
-                        {service.servicesOffered.map((item, i) => (
-                          <li key={i}>
-                            <strong>{item.name}:</strong> {item.description} 
-                            <br />
-                            <a href={item.url} target="_blank" rel="noopener noreferrer">
-                              Learn more
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {Array.isArray(service.servicesOffered) && service.servicesOffered.map((item, i) => (
+                      <li key={i}><strong>{item.name}:</strong> {item.description}<br /><a href={item.url} target="_blank" rel="noopener noreferrer">Learn more</a></li>
+                    ))}
                   </ul>
                 </>
               )}
-
-              {service.providerTitle && (
-                <Link to="/about-us">
-                  <h3 className="info-subtitle">{service.providerTitle}</h3>
-                </Link>
-              )}
+              {service.providerTitle && <Link to="/about-us"><h3 className="info-subtitle">{service.providerTitle}</h3></Link>}
               {service.providerContent && (
                 <div className="provider-container">
                   <div className="provider-text">
@@ -210,56 +145,41 @@ const Services = () => {
                 </div>
               )}
               <Link to="/contact#contactForm" className="cta-button" style={{ margin: "20px" }}>
-                Get a Free SEO Audit
+                Get a Free Quote
               </Link>
             </div>
           </div>
         )}
 
-        {/* LOCATIONS LOOP SECTION using serviceOfferedData */}
-
-        {/* LOCATIONS LOOP SECTION using serviceOfferedData */}
         <div className="locations-list-container">
           <h2 className="locations-list-title">Our Service Areas</h2>
           <p className="locations-list-subtitle">
-            I serve all these locations – find a service area near you to experience our top-notch SEO services.
+            I serve all these locations – find a service area near you to experience our top-notch drone services.
           </p>
           <div className="locations-grid">
-            {Object.entries(serviceOfferedData)
-              .sort(() => 0.5 - Math.random())
-              .slice(0, 8)
-              .map(([key, location]) => (
-                <Link key={key} to={`/locations/${key}`} className="location-card">
-                  <div
-                    className="location-image"
-                    style={{ backgroundImage: `url(${location.heroImage})` }}
-                  >
-                    <div className="location-overlay">
-                      <h3>{location.name}</h3>
-                    </div>
+            {Object.entries(serviceOfferedData).sort(() => 0.5 - Math.random()).slice(0, 8).map(([key, location]) => (
+              <Link key={key} to={`/locations/${key}`} className="location-card">
+                <div className="location-image" style={{ backgroundImage: `url(${location.heroImage})` }}>
+                  <div className="location-overlay">
+                    <h3>{location.name}</h3>
                   </div>
-                  <div className="location-content">
-                    <p>{location.description}</p>
-                  </div>
-                </Link>
-              ))}
+                </div>
+                <div className="location-content">
+                  <p>{location.description}</p>
+                </div>
+              </Link>
+            ))}
           </div>
-
           <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <Link to="/locations" className="cta-button">
-              See All Locations
-            </Link>
+            <Link to="/locations" className="cta-button">See All Locations</Link>
           </div>
         </div>
-
       </div>
 
-      {/* CONTACT FORM */}
       <div id="contactForm">
         <Contact />
       </div>
 
-      {/* FOOTER */}
       <FooterComponent />
     </>
   );
