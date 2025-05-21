@@ -525,3 +525,53 @@ export const serviceOfferedData = {
     hours: "Mo-Fr 09:00-18:00"
   }
 };
+
+export const dronesData = {
+  "dji-fpv": {
+    name: "DJI FPV",
+    tagline: "First-Person View Drone for High-Speed Cinematics",
+    overview: "The DJI FPV is built for speed, agility, and immersive flight experiences. With 4K video at 60fps, ultra-low latency video transmission, and manual flight mode, it’s perfect for high-action shoots like chase scenes, dynamic event coverage, and cinematic fly-throughs.",
+    specs: {
+      camera: "4K/60fps video, 120Mbps bitrate",
+      fieldOfView: "150° FOV ultra-wide lens",
+      stabilization: "RockSteady EIS",
+      flightModes: "Normal, Sport, Manual (Acro)",
+      maxSpeed: "87 mph (140 km/h)",
+      transmission: "10 km HD video feed with DJI O3",
+      batteryLife: "20 minutes",
+      controller: "DJI FPV Remote Controller 2 with motion controller support"
+    },
+    useCases: [
+      "Cinematic Fly-Throughs",
+      "Music Video Flyovers",
+      "Extreme Sports Coverage",
+      "Indoor Venue Tours",
+      "Action-Focused Social Content"
+    ],
+    priceTier: "Premium Cinematic Package ($600/hr with pilot)"
+  },
+
+  "mavic-air": {
+    name: "DJI Mavic Air",
+    tagline: "Compact Drone with Big Cinematic Power",
+    overview: "The original DJI Mavic Air is a compact powerhouse offering 4K video at 30fps, a 3-axis gimbal for stabilized footage, and intelligent flight modes like SmartCapture and QuickShots. It's perfect for real estate, rentals, travel content, and social media-ready aerial shots.",
+    specs: {
+      camera: "4K/30fps video, 100Mbps bitrate",
+      sensor: "1/2.3” CMOS, 12MP stills",
+      stabilization: "3-axis mechanical gimbal",
+      flightModes: "SmartCapture, ActiveTrack, QuickShots",
+      maxSpeed: "42.5 mph (68.4 km/h)",
+      transmission: "4 km 720p real-time video",
+      batteryLife: "21 minutes",
+      controller: "Dedicated remote with foldable design"
+    },
+    useCases: [
+      "Real Estate Walkthroughs",
+      "Airbnb Property Tours",
+      "Weddings & Events",
+      "Social Media Promos",
+      "Scenic Landscape Shots"
+    ],
+    priceTier: "Standard Aerial Package ($250/hr with pilot)"
+  }
+};

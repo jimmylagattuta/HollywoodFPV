@@ -1,37 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { servicesData, projectsData } from '../data';
+import { servicesData, projectsData as dronesData } from '../data';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesSubMenuOpen, setServicesSubMenuOpen] = useState(false);
-  const [projectsSubMenuOpen, setProjectsSubMenuOpen] = useState(false);
+  const [dronesSubMenuOpen, setDronesSubMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
   const navigate = useNavigate();
   const location = useLocation();
   const servicesHoverTimeout = useRef(null);
-  const projectsHoverTimeout = useRef(null);
+  const dronesHoverTimeout = useRef(null);
 
-  // Toggle entire mobile menu
   const toggleMenu = () => {
     if (isMobile) {
       setIsOpen(!isOpen);
       if (isOpen) {
         setServicesSubMenuOpen(false);
-        setProjectsSubMenuOpen(false);
+        setDronesSubMenuOpen(false);
       }
     }
   };
 
-  // Navigate to a route & close all menus
   const handleNavItemClick = (path) => {
     navigate(path);
     setIsOpen(false);
     setServicesSubMenuOpen(false);
-    setProjectsSubMenuOpen(false);
+    setDronesSubMenuOpen(false);
   };
 
-  // Scroll to Contact Form if on the same page, otherwise navigate
   const handleContactClick = () => {
     const targetHash = "#contactForm";
     if (location.pathname.startsWith("/contact")) {
@@ -42,10 +39,9 @@ function Navbar() {
     }
     setIsOpen(false);
     setServicesSubMenuOpen(false);
-    setProjectsSubMenuOpen(false);
+    setDronesSubMenuOpen(false);
   };
 
-  // Services submenu handlers
   const handleServicesClick = () => {
     if (isMobile) setServicesSubMenuOpen(!servicesSubMenuOpen);
   };
@@ -63,25 +59,23 @@ function Navbar() {
     }
   };
 
-  // Projects submenu handlers
-  const handleProjectsClick = () => {
-    if (isMobile) setProjectsSubMenuOpen(!projectsSubMenuOpen);
+  const handleDronesClick = () => {
+    if (isMobile) setDronesSubMenuOpen(!dronesSubMenuOpen);
   };
 
-  const handleProjectsEnter = () => {
+  const handleDronesEnter = () => {
     if (!isMobile) {
-      clearTimeout(projectsHoverTimeout.current);
-      setProjectsSubMenuOpen(true);
+      clearTimeout(dronesHoverTimeout.current);
+      setDronesSubMenuOpen(true);
     }
   };
 
-  const handleProjectsLeave = () => {
+  const handleDronesLeave = () => {
     if (!isMobile) {
-      projectsHoverTimeout.current = setTimeout(() => setProjectsSubMenuOpen(false), 300);
+      dronesHoverTimeout.current = setTimeout(() => setDronesSubMenuOpen(false), 300);
     }
   };
 
-  // Update mobile state on window resize
   useEffect(() => {
     const handleResize = () => {
       const mobileView = window.innerWidth < 769;
@@ -89,7 +83,7 @@ function Navbar() {
       if (!mobileView) {
         setIsOpen(false);
         setServicesSubMenuOpen(false);
-        setProjectsSubMenuOpen(false);
+        setDronesSubMenuOpen(false);
       }
     };
     window.addEventListener('resize', handleResize);
@@ -99,23 +93,21 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Brand: Logo + Company Name */}
         <div className="navbar-brand">
           <div className="navbar-logo" onClick={() => handleNavItemClick('/')}>
             <img
               src="https://i.postimg.cc/4xcYZfvR/i-Stock-1502494966-2.webp"
-              alt="LightningSEO.dev Logo"
+              alt="Hollywood FPV Logo"
               loading="eager"
               height="65"
               width="85"
             />
           </div>
           <div className="company-name-desktop" onClick={() => handleNavItemClick('/')}>
-            LightningSEO.dev
+            Hollywood FPV
           </div>
         </div>
 
-        {/* Mobile Menu Icon */}
         {isMobile && (
           <div className="menu-icon" onClick={toggleMenu}>
             <div className={isOpen ? 'bar change' : 'bar'}></div>
@@ -124,7 +116,6 @@ function Navbar() {
           </div>
         )}
 
-        {/* Navigation Links */}
         <ul className={`nav-menu ${isOpen || !isMobile ? 'active' : ''}`}>
           <li
             className="nav-item services-link"
@@ -134,11 +125,7 @@ function Navbar() {
           >
             Services
             {servicesSubMenuOpen && (
-              <ul
-                className="sub-nav-menu show"
-                onMouseEnter={handleServicesEnter}
-                onMouseLeave={handleServicesLeave}
-              >
+              <ul className="sub-nav-menu show" onMouseEnter={handleServicesEnter} onMouseLeave={handleServicesLeave}>
                 {Object.entries(servicesData).map(([key, service]) => (
                   <li
                     key={key}
@@ -153,46 +140,26 @@ function Navbar() {
           </li>
 
           <li
-            className="nav-item projects-link"
-            onClick={handleProjectsClick}
-            onMouseEnter={handleProjectsEnter}
-            onMouseLeave={handleProjectsLeave}
+            className="nav-item drones-link"
+            onClick={handleDronesClick}
+            onMouseEnter={handleDronesEnter}
+            onMouseLeave={handleDronesLeave}
           >
-            Projects
-            {projectsSubMenuOpen && (
-              <ul
-                className="sub-nav-menu show"
-                onMouseEnter={handleProjectsEnter}
-                onMouseLeave={handleProjectsLeave}
-              >
-                {Object.entries(projectsData).map(([key, project]) => (
+            Drones
+            {dronesSubMenuOpen && (
+              <ul className="sub-nav-menu show" onMouseEnter={handleDronesEnter} onMouseLeave={handleDronesLeave}>
+                {Object.entries(dronesData).map(([key, drone]) => (
                   <li
                     key={key}
                     className="sub-nav-item"
-                    onClick={() => handleNavItemClick(`/projects/${key}`)}
+                    onClick={() => handleNavItemClick(`/drones/${key}`)}
                   >
-                    {project.name}
+                    {drone.name}
                   </li>
                 ))}
               </ul>
             )}
           </li>
-{/* 
-          <li className="nav-item pricing-link" onClick={() => handleNavItemClick('/pricing')}>
-            Pricing
-          </li>
-
-          <li className="nav-item reviews-link" onClick={() => handleNavItemClick('/reviews')}>
-            Reviews
-          </li>
-
-          <li className="nav-item faq-link" onClick={() => handleNavItemClick('/faq')}>
-            FAQ
-          </li> */}
-{/* 
-          <li className="nav-item aboutus-link" onClick={() => handleNavItemClick('/about-us')}>
-            About Us
-          </li> */}
 
           <li className="nav-item book-appointment" onClick={handleContactClick}>
             Book a Flight
