@@ -161,6 +161,14 @@ function Navbar() {
             )}
           </li>
 
+          <li className="nav-item faq-link" onClick={() => handleNavItemClick('/faq')}>
+            FAQ
+          </li>
+
+          <li className="nav-item aboutus-link" onClick={() => handleNavItemClick('/about-us')}>
+            About Us
+          </li>
+
           <li className="nav-item book-appointment" onClick={handleContactClick}>
             Book a Flight
           </li>

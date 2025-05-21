@@ -51,7 +51,7 @@ function Contact() {
       setIsSubmitting(true);
       const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
       try {
-        const response = await fetch('https://www.lightningseo.dev/contact', {
+        const response = await fetch('https://hollywood-fpv-e9adcc4a24d9.herokuapp.com/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -82,9 +82,10 @@ function Contact() {
     <>
       <div className="contact-section">
         <div className="contact-section-header">
-          <h2>Contact LightningSEO.dev</h2>
+          <h2>Contact Hollywood FPV</h2>
           <p>
-            If you have any inquiries about our SEO, web development, mobile app, or Apple Watch app services, please fill out the short contact form below.
+            Looking to book cinematic drone videography or ask a question about our services?
+            Fill out the short form below and we’ll be in touch soon.
           </p>
         </div>
         {!submitted ? (
@@ -165,7 +166,7 @@ function Contact() {
                 required
               />
               <label htmlFor="agreement">
-                By submitting this form, I consent to having LightningSEO.dev contact me regarding my inquiry.
+                By submitting this form, I consent to being contacted by Hollywood FPV about my inquiry.
               </label>
               {errors.agreement && <span className="error-message">{errors.agreement}</span>}
             </div>
@@ -176,7 +177,7 @@ function Contact() {
         ) : (
           <div className="contact-submitted-message">
             <h3>Thank You!</h3>
-            <p>Your message has been sent successfully. We will get back to you shortly.</p>
+            <p>Your message has been sent successfully. We'll get back to you shortly.</p>
           </div>
         )}
       </div>

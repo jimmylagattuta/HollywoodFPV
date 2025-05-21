@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkclient=self.webpackChunkclient||[]).push([[949],{949:(e,s,c)=>{c.r(s),c.d(s,{default:()=>n});c(483);var i=c(723);const n=()=>(0,i.jsxs)("div",{className:"reviews-page",children:[(0,i.jsx)("h1",{children:"Reviews"}),(0,i.jsx)("p",{children:"This page is under construction. Check back soon for real customer reviews and testimonials!"})]})}}]);
+//# sourceMappingURL=949.7d345aa7.chunk.js.map

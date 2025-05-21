@@ -44,19 +44,19 @@ Rails.application.configure do
   }
 
   # Specify the asset host for serving images, stylesheets, and JavaScripts
-  config.asset_host = "http://hollywoodfpv.com"
+  config.asset_host = "http://hollywood-fpv-e9adcc4a24d9.herokuapp.com"
 
   # Set Active Storage service (local storage by default)
   config.active_storage.service = :local
 
   # Action Mailer settings
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.asset_host = "https://hollywoodfpv.com"
+  config.action_mailer.asset_host = "https://hollywood-fpv-e9adcc4a24d9.herokuapp.com"
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
     domain: 'gmail.com',
-    user_name: 'fpvhollywood@gmail.com',
+    user_name: 'jimmy.lagattuta@gmail.com',
     password: ENV["REACT_APP_GMAIL_PASSWORD"],
     authentication: 'plain',
     enable_starttls_auto: true
