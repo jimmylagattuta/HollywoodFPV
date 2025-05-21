@@ -3,19 +3,19 @@ default: &default
   encoding: unicode
   pool: 5
   username: postgres
-  password: <%= ENV['LIGHTING_SEO_DEV_DATABASE_PASSWORD'] %>
+  password: <%= ENV['HOLLYWOOD_FPV_DATABASE_PASSWORD'] %>
   host: localhost
   port: 5432
 
 development:
   <<: *default
-  database: lightning_seo_dev_development
+  database: hollywood_fpv_development
 
 test:
   <<: *default
-  database: lightning_seo_dev_test
+  database: hollywood_fpv_test
 
 production:
   <<: *default
-  database: lightning_seo_dev_production
+  database: hollywood_fpv_production
   url: <%= ENV['DATABASE_URL'] %>
