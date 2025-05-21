@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { servicesData, projectsData as dronesData } from '../data';
+import { servicesData, dronesData } from '../data';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
