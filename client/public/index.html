@@ -86,7 +86,7 @@ body, html {
 }
 
 .navbar {
-  background: linear-gradient(135deg, #0d0d0d, #1b1b1b);
+  background: linear-gradient(135deg, #000000, #1b1b1b);
   height: 80px;
   display: flex;
   align-items: stretch; /* stretch children fully vertically */
@@ -139,25 +139,116 @@ body, html {
 
 .menu-icon {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%) rotateX(55deg); /* default tilt */
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
   z-index: 1001;
-  margin-right: 12px;
+  perspective: 600px;
+}
+.menu-icon.spin {
+  animation: spinProp 1.5s linear;
 }
 
 .bar {
-  width: 30px;
+  position: absolute;
+  width: 28px;
   height: 3px;
-  background: #fff;
-  margin: 4px 0;
-  transition: 0.4s;
+  background: #00aaff;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.bar.change:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+/* 3D blade positioning */
+.bar:nth-child(1) { transform: rotateX(25deg) rotateZ(0deg); }
+.bar:nth-child(2) { transform: rotateX(25deg) rotateZ(120deg); }
+
+
+/* Open menu state — morph into X (top and bottom rotate) */
+.bar.change:nth-child(1) { transform: rotateZ(50deg); }
 .bar.change:nth-child(2) { opacity: 0; }
-.bar.change:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.bar.change:nth-child(3) { opacity: 0; }
+.bar.change:nth-child(4) { transform: rotateZ(-50deg); }
+.menu-icon.has-x .bar.change:nth-child(1),
+.menu-icon.has-x .bar.change:nth-child(4) {
+  width: 30px;
+}
+
+/* Remove the mobile tap highlight */
+.menu-icon,
+.new-menu-icon {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove any focus outline or inner border */
+.menu-icon:focus,
+.new-menu-icon:focus {
+  outline: none;
+}
+.menu-icon::-moz-focus-inner,
+.new-menu-icon::-moz-focus-inner {
+  border: 0;
+}
+
+/* Prevent an active background flash */
+.menu-icon:active,
+.new-menu-icon:active {
+  background-color: transparent;
+}
+
+
+@keyframes spinProp {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  30% { transform: translateY(-50%) rotate(30deg); }
+  60% { transform: translateY(-50%) rotate(-30deg); }
+  100% { transform: translateY(-50%) rotate(0deg); }
+}
+
+.menu-icon:hover {
+  transform: translateY(-50%) rotateX(8deg);
+}
+
+@keyframes spinProp {
+  0%   { transform: translateY(-50%) rotateX(55deg) rotate(0deg); }
+  100% { transform: translateY(-50%) rotateX(75deg) rotate(7200deg); }
+}
+
+
+.new-menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.new-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #00aaff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 .nav-menu {
   display: none;
@@ -205,7 +296,7 @@ body, html {
 
   .navbar {
     height: 90px;
-    background: #fff;
+
   }
 
   .nav-menu {

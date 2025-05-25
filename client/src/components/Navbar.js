@@ -2,16 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen]     = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
-  const navigate = useNavigate();
+  const navigate                = useNavigate();
 
-  const toggleMenu = () => setIsOpen(prev => !prev);
+  // spinning + X state
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [menuStage, setMenuStage]   = useState('hamburger'); // 'hamburger' | 'spinning' | 'propeller'
+  const [hasX, setHasX]             = useState(false);
+
+  const toggleMenu = () => {
+    if (isSpinning) return;
+
+    setIsSpinning(true);
+    setMenuStage('spinning');
+
+    const opening = !isOpen;
+
+    setTimeout(() => {
+      setIsOpen(opening);
+      setMenuStage(opening ? 'propeller' : 'hamburger');
+      setIsSpinning(false);
+      setHasX(opening);
+    }, 1500);
+  };
+
   const goTo = (path) => {
     navigate(path);
     setIsOpen(false);
   };
 
+  // handle resize
   useEffect(() => {
     const onResize = () => {
       const mobile = window.innerWidth < 769;
@@ -21,6 +42,26 @@ export default function Navbar() {
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
+
+  // spin every 5s when closed (mobile only)
+  useEffect(() => {
+    if (!isMobile) return;
+    const id = setInterval(() => {
+      const el = document.querySelector('.menu-icon');
+      if (el && !isOpen) {
+        el.classList.add('spin');
+        setTimeout(() => el.classList.remove('spin'), 1200);
+      }
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isMobile, isOpen]);
+
+  // build your icon’s classes—no grow-x anywhere
+  const menuIconClasses = [
+    'menu-icon',
+    isSpinning ? 'spin' : '',
+    hasX       ? 'has-x' : ''
+  ].filter(Boolean).join(' ');
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
@@ -50,17 +91,27 @@ export default function Navbar() {
           </div>
         </a>
 
-
         {isMobile && (
-          <button
-            className="menu-icon"
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-          >
-            <div className={isOpen ? 'bar change' : 'bar'} />
-            <div className={isOpen ? 'bar change' : 'bar'} />
-            <div className={isOpen ? 'bar change' : 'bar'} />
-          </button>
+          <>
+            {menuStage === 'hamburger' ? (
+              <button className="new-menu-icon" onClick={toggleMenu} aria-label="Open menu">
+                <div className="new-bar" />
+                <div className="new-bar" />
+                <div className="new-bar" />
+              </button>
+            ) : (
+              <button
+                className={menuIconClasses}
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                <div className={hasX && !isSpinning ? 'bar change' : 'bar'} />
+                <div className={hasX && !isSpinning ? 'bar change' : 'bar'} />
+                <div className={hasX && !isSpinning ? 'bar change' : 'bar'} />
+                <div className={hasX && !isSpinning ? 'bar change' : 'bar'} />
+              </button>
+            )}
+          </>
         )}
 
         <ul className={`nav-menu ${isOpen || !isMobile ? 'active' : ''}`}>
@@ -68,7 +119,9 @@ export default function Navbar() {
           <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
           <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
           <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
-          <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
+          <li className="nav-item book-appointment" onClick={() => goTo('/book')}>
+            Book a Flight
+          </li>
         </ul>
       </div>
     </nav>
