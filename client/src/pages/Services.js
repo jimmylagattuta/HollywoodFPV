@@ -95,7 +95,7 @@ const Services = () => {
               <p className="hero-description"><strong>Starting at: {service.price}</strong></p>
             </div>
             <Link to="/contact#contactForm" className="cta-button">
-              Get a Free Quote
+              Book a Flight
             </Link>
           </div>
         </div>
