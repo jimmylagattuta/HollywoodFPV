@@ -83,6 +83,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -160,7 +161,7 @@ body, html {
 
 .bar {
   position: absolute;
-  width: 28px;
+  width: 40px;
   height: 3px;
   background: #00aaff;
   border-radius: 2px;
@@ -279,12 +280,20 @@ body, html {
 }
 
 .book-appointment {
+  background: #00c78c;
   color: #fff;
-  background: #1dbf73;
-  border-radius: 25px;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  font-weight: bold;
+  border-radius: 100px;
+  padding: 0.65rem 1.75rem;
+  margin-left: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.book-appointment:hover {
+  background: #00a174;
+  transform: translateY(-1px);
 }
 
 .book-appointment:hover {
@@ -323,6 +332,63 @@ body, html {
     margin-left: 2rem;
   }
 }
+
+.nav-menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed; /* changed from absolute */
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 80px); /* fill the screen minus navbar */
+  background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+  padding: 2rem 0;
+  text-align: center;
+  z-index: 9999; /* force it above everything */
+  overflow-y: auto; /* scroll if needed */
+}
+
+.nav-menu-mobile.show {
+  display: flex;
+}
+
+
+.nav-menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-right: 2rem;
+}
+
+.nav-menu-desktop .nav-item {
+  color: #f0f0f0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu-desktop .nav-item:hover {
+  color: #00c78c;
+}
+
+.nav-menu-desktop .nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00c78c;
+  transition: width 0.3s ease;
+}
+
+.nav-menu-desktop .nav-item:hover::after {
+  width: 100%;
+}
+
+
 
 
 

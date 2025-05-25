@@ -10,22 +10,22 @@ export default function Navbar() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [menuStage, setMenuStage]   = useState('hamburger'); // 'hamburger' | 'spinning' | 'propeller'
   const [hasX, setHasX]             = useState(false);
+const toggleMenu = () => {
+  if (isSpinning) return;
 
-  const toggleMenu = () => {
-    if (isSpinning) return;
+  const opening = !isOpen;
+  setIsOpen(opening); // 👈 shows/hides mobile menu immediately
 
-    setIsSpinning(true);
-    setMenuStage('spinning');
+  setIsSpinning(true);
+  setMenuStage('spinning');
 
-    const opening = !isOpen;
+  setTimeout(() => {
+    setMenuStage(opening ? 'propeller' : 'hamburger');
+    setIsSpinning(false);
+    setHasX(opening);
+  }, 1500);
+};
 
-    setTimeout(() => {
-      setIsOpen(opening);
-      setMenuStage(opening ? 'propeller' : 'hamburger');
-      setIsSpinning(false);
-      setHasX(opening);
-    }, 1500);
-  };
 
   const goTo = (path) => {
     navigate(path);
@@ -114,15 +114,25 @@ export default function Navbar() {
           </>
         )}
 
-        <ul className={`nav-menu ${isOpen || !isMobile ? 'active' : ''}`}>
-          <li className="nav-item" onClick={() => goTo('/services')}>Services</li>
-          <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
-          <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
-          <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
-          <li className="nav-item book-appointment" onClick={() => goTo('/book')}>
-            Book a Flight
-          </li>
-        </ul>
+{isMobile ? (
+  <ul className={`nav-menu-mobile ${isOpen ? 'show' : ''}`}>
+    <li className="nav-item" onClick={() => goTo('/services')}>Services</li>
+    <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
+    <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
+    <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
+    <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
+  </ul>
+) : (
+  <ul className="nav-menu-desktop">
+    <li className="nav-item" onClick={() => goTo('/services')}>Services</li>
+    <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
+    <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
+    <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
+    <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
+  </ul>
+)}
+
+
       </div>
     </nav>
   );
