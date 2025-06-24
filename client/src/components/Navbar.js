@@ -1,38 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { servicesData, dronesData } from '../data'; // Ensure this path is accurate
 
 export default function Navbar() {
-  const [isOpen, setIsOpen]     = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
-  const navigate                = useNavigate();
-
-  // spinning + X state
   const [isSpinning, setIsSpinning] = useState(false);
-  const [menuStage, setMenuStage]   = useState('hamburger'); // 'hamburger' | 'spinning' | 'propeller'
-  const [hasX, setHasX]             = useState(false);
-const toggleMenu = () => {
-  if (isSpinning) return;
+  const [menuStage, setMenuStage] = useState('hamburger');
+  const [hasX, setHasX] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [dronesOpen, setDronesOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const opening = !isOpen;
-  setIsOpen(opening); // 👈 shows/hides mobile menu immediately
+  const toggleServices = () => setServicesOpen(prev => !prev);
+  const toggleDrones = () => setDronesOpen(prev => !prev);
 
-  setIsSpinning(true);
-  setMenuStage('spinning');
-
-  setTimeout(() => {
-    setMenuStage(opening ? 'propeller' : 'hamburger');
-    setIsSpinning(false);
-    setHasX(opening);
-  }, 1500);
-};
-
+  const toggleMenu = () => {
+    if (isSpinning) return;
+    const opening = !isOpen;
+    setIsOpen(opening);
+    setIsSpinning(true);
+    setMenuStage('spinning');
+    setTimeout(() => {
+      setMenuStage(opening ? 'propeller' : 'hamburger');
+      setIsSpinning(false);
+      setHasX(opening);
+    }, 1500);
+  };
 
   const goTo = (path) => {
     navigate(path);
     setIsOpen(false);
+    setServicesOpen(false);
+    setDronesOpen(false);
   };
 
-  // handle resize
   useEffect(() => {
     const onResize = () => {
       const mobile = window.innerWidth < 769;
@@ -43,7 +45,6 @@ const toggleMenu = () => {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // spin every 5s when closed (mobile only)
   useEffect(() => {
     if (!isMobile) return;
     const id = setInterval(() => {
@@ -56,12 +57,31 @@ const toggleMenu = () => {
     return () => clearInterval(id);
   }, [isMobile, isOpen]);
 
-  // build your icon’s classes—no grow-x anywhere
   const menuIconClasses = [
     'menu-icon',
     isSpinning ? 'spin' : '',
-    hasX       ? 'has-x' : ''
+    hasX ? 'has-x' : ''
   ].filter(Boolean).join(' ');
+
+  const servicesDropdown = (
+    <ul className="dropdown-menu">
+      {Object.entries(servicesData).map(([key, value]) => (
+        <li key={key} onClick={() => goTo(`/services/${key}`)}>
+          {value.title}
+        </li>
+      ))}
+    </ul>
+  );
+
+  const dronesDropdown = (
+    <ul className="dropdown-menu">
+      {Object.entries(dronesData).map(([key, value]) => (
+        <li key={key} onClick={() => goTo(`/drones/${key}`)}>
+          {value.name}
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
@@ -91,7 +111,7 @@ const toggleMenu = () => {
           </div>
         </a>
 
-        {isMobile && (
+        {isMobile ? (
           <>
             {menuStage === 'hamburger' ? (
               <button className="new-menu-icon" onClick={toggleMenu} aria-label="Open menu">
@@ -111,28 +131,52 @@ const toggleMenu = () => {
                 <div className={hasX && !isSpinning ? 'bar change' : 'bar'} />
               </button>
             )}
+
+            <ul className={`nav-menu-mobile ${isOpen ? 'show' : ''}`}>
+              <li className="nav-item" onClick={toggleServices}>
+                Services
+                {servicesOpen && servicesDropdown}
+              </li>
+              <li className="nav-item" onClick={toggleDrones}>
+                Drones
+                {dronesOpen && dronesDropdown}
+              </li>
+              <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
+              <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
+            </ul>
           </>
+        ) : (
+          <ul className="nav-menu-desktop">
+            {/* Services dropdown (always in DOM, pure CSS hover) */}
+            <li className="nav-item has-dropdown">
+              <span>Services</span>
+              <ul className="dropdown-menu">
+                {Object.entries(servicesData).map(([key, value]) => (
+                  <li key={key} onClick={() => goTo(`/services/${key}`)}>
+                    {value.title}
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            {/* Drones dropdown (same fix applied) */}
+            <li className="nav-item has-dropdown">
+              <span>Drones</span>
+              <ul className="dropdown-menu">
+                {Object.entries(dronesData).map(([key, value]) => (
+                  <li key={key} onClick={() => goTo(`/drones/${key}`)}>
+                    {value.name}
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            {/* Standard links */}
+            <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
+            <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
+          </ul>
+
         )}
-
-{isMobile ? (
-  <ul className={`nav-menu-mobile ${isOpen ? 'show' : ''}`}>
-    <li className="nav-item" onClick={() => goTo('/services')}>Services</li>
-    <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
-    <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
-    <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
-    <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
-  </ul>
-) : (
-  <ul className="nav-menu-desktop">
-    <li className="nav-item" onClick={() => goTo('/services')}>Services</li>
-    <li className="nav-item" onClick={() => goTo('/drones')}>Drones</li>
-    <li className="nav-item" onClick={() => goTo('/faq')}>FAQ</li>
-    <li className="nav-item" onClick={() => goTo('/about-us')}>About Us</li>
-    <li className="nav-item book-appointment" onClick={() => goTo('/book')}>Book a Flight</li>
-  </ul>
-)}
-
-
       </div>
     </nav>
   );

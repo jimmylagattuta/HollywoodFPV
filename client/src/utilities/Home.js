@@ -45,13 +45,13 @@ const Home = ({ scrollToContact }) => {
 
       {loadRest && (
         <Suspense fallback={<div>Loading...</div>}>
-          <AboutUsComponent />
+          {/* <AboutUsComponent /> */}
           <Contact />
-          <PlaquesComponent />
-          <OurServicesComponent />
-          <HowItWorksComponent />
-          <LocationsSection />
-          <FooterComponent />
+          {/* <PlaquesComponent /> */}
+          {/* <OurServicesComponent /> */}
+          {/* <HowItWorksComponent /> */}
+          {/* <LocationsSection /> */}
+          {/* <FooterComponent /> */}
         </Suspense>
       )}
     </div>
